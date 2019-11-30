@@ -12,6 +12,7 @@
 
 package com.African411.controller;
 
+import com.African411.RetailService;
 import com.African411.domain.Retail;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,33 +26,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class AdminController {
 
     @Autowired
-    private StudentService studentService;
-
-    @Autowired
-    private ExamForAdminService EFA;
+    private RetailService retailService;
 
     @PostMapping(value = "/add-retail")
     @ResponseBody
-    public String addStudent(@RequestBody Retail retail) {
-        if (s.getStudentSex().equals("male")) s.setStudentSex("male");
-        if (s.getStudentSex().equals("female")) s.setStudentSex("female");
-        studentService.insertStudent(s);
+    public String addRetail(@RequestBody Retail retail) {
+//        if (retail.getStudentSex().equals("male")) s.setStudentSex("male");
+//        if (retail.getStudentSex().equals("female")) s.setStudentSex("female");
+//        studentService.insertStudent(s);
         return "";
-    }
-
-    @PostMapping(value = "/addteacher")
-    @ResponseBody
-    public String addTeacher(@RequestBody Teacher t) {
-        if (t.getTeacherSex().equals("male")) t.setTeacherSex("male");
-        if (t.getTeacherSex().equals("female")) t.setTeacherSex("female");
-        teacherService.insertTeacher(t);
-        return "";
-    }
-
-
-    @PostMapping(value = "/exam/addexam")
-    @ResponseBody
-    public void addExam(@RequestBody Exams e) {
-        EFA.insertExam(e);
     }
 }

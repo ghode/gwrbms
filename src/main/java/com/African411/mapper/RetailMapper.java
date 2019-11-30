@@ -10,10 +10,22 @@
  * ghode@cirnocraft.im or directly ignore this, which will be interesting.
  */
 
-package com.African411;
+package com.African411.mapper;
 
-public class Hello {
-    public static void main(String[] args) {
-        System.out.println("com.African411.Hello world");
-    }
+import com.African411.domain.Retail;
+import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
+
+@Mapper
+public interface RetailMapper {
+    public void addRetail(Retail retail);
+
+    public List<Retail> queryRetail();
+
+    public List<Retail> selectRetail(String id);
+
+    public void deleteRetail(String id);
+
+    public void updateRetail(Retail retail);
 }
