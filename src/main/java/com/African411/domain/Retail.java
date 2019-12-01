@@ -12,14 +12,17 @@
 
 package com.African411.domain;
 
+/**
+ * 货物
+ */
 public class Retail {
 
-    private String ID;
+    private int ID;
     private String name;
     private Double price;
     private Double quantity;
 
-    public Retail(String ID, String name, Double price, Double quantity) {
+    public Retail(int ID, String name, Double price, Double quantity) {
         this.ID = ID;
         this.name = name;
         this.price = price;
@@ -50,11 +53,11 @@ public class Retail {
         this.name = name;
     }
 
-    public String getID() {
+    public int getID() {
         return ID;
     }
 
-    public void setID(String ID) {
+    public void setID(int ID) {
         this.ID = ID;
     }
 
