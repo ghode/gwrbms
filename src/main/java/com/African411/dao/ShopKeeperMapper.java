@@ -12,5 +12,18 @@
 
 package com.African411.dao;
 
+import com.African411.domain.ShopKeeper;
+
+import java.util.List;
+
 public interface ShopKeeperMapper {
+    int deleteByPrimaryKey(Integer id);
+
+    int insert(ShopKeeper record);
+
+    ShopKeeper selectByPrimaryKey(Integer id);
+
+    List<ShopKeeper> selectAll();
+
+    int updateByPrimaryKey(ShopKeeper record);
 }

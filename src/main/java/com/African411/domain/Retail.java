@@ -12,37 +12,21 @@
 
 package com.African411.domain;
 
-/**
- * 货物
- */
 public class Retail {
+    private Integer id;
 
-    private int ID;
     private String name;
-    private Double price;
-    private Double quantity;
 
-    public Retail(int ID, String name, Double price, Double quantity) {
-        this.ID = ID;
-        this.name = name;
-        this.price = price;
-        this.quantity = quantity;
+    private Long price;
+
+    private Long quantity;
+
+    public Integer getId() {
+        return id;
     }
 
-    public Double getPrice() {
-        return price;
-    }
-
-    public void setPrice(Double price) {
-        this.price = price;
-    }
-
-    public Double getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(Double quantity) {
-        this.quantity = quantity;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -53,12 +37,19 @@ public class Retail {
         this.name = name;
     }
 
-    public int getID() {
-        return ID;
+    public Long getPrice() {
+        return price;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setPrice(Long price) {
+        this.price = price;
     }
 
+    public Long getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Long quantity) {
+        this.quantity = quantity;
+    }
 }

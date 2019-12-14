@@ -13,19 +13,17 @@
 package com.African411.dao;
 
 import com.African411.domain.Retail;
-import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
-@Mapper
 public interface RetailMapper {
-    public void insertRetail(Retail retail);
+    int deleteByPrimaryKey(Integer id);
 
-    public List<Retail> queryRetail();
+    int insert(Retail record);
 
-    public List<Retail> selectRetail(String id);
+    Retail selectByPrimaryKey(Integer id);
 
-    public void deleteRetail(String id);
+    List<Retail> selectAll();
 
-    public void updateRetail(Retail retail);
+    int updateByPrimaryKey(Retail record);
 }

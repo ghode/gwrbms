@@ -13,20 +13,16 @@
 package com.African411.domain;
 
 public class Admin {
-    private int ID;
+    private Integer id;
+
     private String name;
 
-    public Admin(int ID, String name) {
-        this.ID = ID;
-        this.name = name;
+    public Integer getId() {
+        return id;
     }
 
-    public int getID() {
-        return ID;
-    }
-
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getName() {

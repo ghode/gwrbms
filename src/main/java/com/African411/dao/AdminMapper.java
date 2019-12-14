@@ -12,5 +12,18 @@
 
 package com.African411.dao;
 
-public class AdminMapper {
+import com.African411.domain.Admin;
+
+import java.util.List;
+
+public interface AdminMapper {
+    int deleteByPrimaryKey(Integer id);
+
+    int insert(Admin record);
+
+    Admin selectByPrimaryKey(Integer id);
+
+    List<Admin> selectAll();
+
+    int updateByPrimaryKey(Admin record);
 }

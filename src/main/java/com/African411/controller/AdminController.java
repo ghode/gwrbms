@@ -12,7 +12,6 @@
 
 package com.African411.controller;
 
-import com.African411.domain.Retail;
 import com.African411.service.RetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

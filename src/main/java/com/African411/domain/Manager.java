@@ -12,24 +12,17 @@
 
 package com.African411.domain;
 
-/**
- * 经理
- */
 public class Manager {
-    private int ID;
+    private Integer id;
+
     private String name;
 
-    public Manager(int ID, String name) {
-        this.ID = ID;
-        this.name = name;
+    public Integer getId() {
+        return id;
     }
 
-    public int getID() {
-        return ID;
-    }
-
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getName() {

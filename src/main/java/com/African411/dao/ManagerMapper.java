@@ -12,5 +12,18 @@
 
 package com.African411.dao;
 
+import com.African411.domain.Manager;
+
+import java.util.List;
+
 public interface ManagerMapper {
+    int deleteByPrimaryKey(Integer id);
+
+    int insert(Manager record);
+
+    Manager selectByPrimaryKey(Integer id);
+
+    List<Manager> selectAll();
+
+    int updateByPrimaryKey(Manager record);
 }

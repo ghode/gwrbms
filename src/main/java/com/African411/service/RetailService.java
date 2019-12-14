@@ -12,8 +12,6 @@
 
 package com.African411.service;
 
-import com.African411.domain.Retail;
-
 import java.util.List;
 
 /**

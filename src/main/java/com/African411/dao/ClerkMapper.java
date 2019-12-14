@@ -12,5 +12,18 @@
 
 package com.African411.dao;
 
+import com.African411.domain.Clerk;
+
+import java.util.List;
+
 public interface ClerkMapper {
+    int deleteByPrimaryKey(Integer id);
+
+    int insert(Clerk record);
+
+    Clerk selectByPrimaryKey(Integer id);
+
+    List<Clerk> selectAll();
+
+    int updateByPrimaryKey(Clerk record);
 }

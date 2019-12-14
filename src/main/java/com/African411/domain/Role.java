@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- *
+ * 用户组的枚举
  */
 public enum Role {
 
