@@ -10,22 +10,52 @@
  * ghode@cirnocraft.im or directly ignore this, which will be interesting.
  */
 
-package com.African411.mapper;
+package com.African411.service;
 
 import com.African411.domain.Retail;
-import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
-@Mapper
-public interface RetailMapper {
-    public void addRetail(Retail retail);
+/**
+ * 货物数据服务层
+ *
+ * @author Ghode
+ */
+public interface RetailService {
+    /**
+     * 添加货物记录
+     *
+     * @param retail 一批货物
+     */
+    void addRetail(Retail retail);
 
-    public List<Retail> queryRetail();
+    /**
+     * 查询货物记录
+     *
+     * @return 货物记录
+     */
+    List<Retail> queryRetail();
 
-    public List<Retail> selectRetail(String id);
+    /**
+     * 寻找货物记录
+     *
+     * @param id 货物ID
+     * @return 货物记录
+     */
+    Retail selectRetail(String id);
 
-    public void deleteRetail(String id);
+    /**
+     * 删除货物记录
+     *
+     * @param id 货物ID
+     */
+    void deleteRetail(String id);
 
-    public void updateRetail(Retail retail);
+    /**
+     * 更新货物记录
+     *
+     * @param retail 货物记录
+     */
+    void updateRetail(Retail retail);
+
 }
