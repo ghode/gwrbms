@@ -1,0 +1,68 @@
+<!--
+  ~ Copyright (c) 2019. The copyright is reserved by Ghode of Harbin Institute
+  ~ of Technology. Users are free to copy, change or remove. Because no one
+  ~ will read this. Only I know is that Repeaters are the best of the world.
+  ~ Only I know is that Repeaters are the best of the world. Only I know is
+  ~ that Repeaters are the best of the world. Maybe a long copyright text
+  ~ seems professional. Therefore this text will be a bit lengthy. However,
+  ~ the author seems to be afraid that one day, this text may be uploaded to
+  ~ business projects. That is the time you can contact with author via email
+  ~ ghode@cirnocraft.im or directly ignore this, which will be interesting.
+  -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<script src="../js/jquery-3.2.1.js" type="text/javascript" charset="utf-8"></script>
+	<body>
+		<div class="login-form">
+			
+			<br>
+			<th>
+			<th><br>
+				<table border="1" width="70%" id="table">
+		
+		
+					<tr id="first">
+						<td></td>
+						<td>教职号</td>
+						<td>姓名</td>
+						<td>密码</td>
+						<td>操作</td>
+					</tr>
+		
+				</table>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+				type="button" value="添加学生" onclick="add()" /> <!--在添加按钮上添加点击事件 -->
+		</div>
+	</body>
+	<script type="text/javascript">
+			
+			
+			var queryurl = "/quiz/login/queryAll";
+			$.ajax({
+				url:queryurl,
+				type:"GET",
+				dataType:"json",
+				success:function(str){
+					
+					$("#first").siblings().remove();
+					var res="";
+					$(str).each(function (index,e){
+						res = res+ "<tr><td>"+"</td><td>"+e.studentId+"</td><td>"+e.studentName+"</td><td>"+e.studentPassword+"</td><td>;
+						res = res+"<a style='text-align:center;color:blue;cursor:pointer;' onclick='updateRow(this);'>修改</a> <a style='text-align:center;color:blue;cursor:pointer;' onclick='delRow(this);'>删除</a>"+"</td></tr>";
+					});
+					var app = $(res);
+					$("#first").after(app);
+					
+				},
+				error:function(){
+					alert("233");
+				}
+			});
+			
+	</script>
+</html>
