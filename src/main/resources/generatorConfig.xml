@@ -42,8 +42,8 @@
 
         <!-- 配置XxxMapper.xml存放位置 -->
         <sqlMapGenerator
-                targetPackage="com.African411.dao"
-                targetProject="src\main\java">
+                targetPackage="mapper"
+                targetProject="src\main\resources">
         </sqlMapGenerator>
 
         <javaClientGenerator
