@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="gwrbms:Web exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/gwrbms_Web_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="gwrbms/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="gwrbms" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
