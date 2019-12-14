@@ -13,52 +13,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login</title>
-		<meta charset="utf-8">
-		<link href="css/style.css" rel='stylesheet' type='text/css' />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <title>Login</title>
+    <meta charset="utf-8">
+    <link href="css/style.css" rel='stylesheet' type='text/css'/>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <script type="application/x-javascript"> addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+    }, false);
+
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    } </script>
 </head>
 <style type="text/css">
-	
+
 </style>
 
 <body>
-	
-	<!-----start-main---->
-	
-	<div class="main" >
-			<div class="login-form">
-				<h1>通用批发零售业务管理系统 </h1>
-				<h1>用户登录</h1>
-				
-						
-					<form action="/quiz/login/log" method="GET">
-						
-							<input type="text" class="text" name="username" id="username" value="用户名" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '用户名';}" >
-							<input type="password" name ="password" id = "password" value="000000" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '000000';}">
-							<div class="submit">
-								用户类型&nbsp;&nbsp;&nbsp;
-								<select class="form-control" id="sel" name = "type">
-								  <option>店员</option>
-								  <option>店长</option>
-								  <option>经理</option>
-								</select>
-								
-								<br>
-								.
-								<input type="submit" value="登陆">
-								
-						</div>	
-						<!-- <p><a href="#">Forgot Password ?</a></p> -->
-					</form>
-				</div>
-			</div>
-				 <!-----//end-main---->
-		 		
+
+<!-----start-main---->
+
+<div class="main">
+    <div class="login-form">
+        <h1>通用批发零售业务管理系统 </h1>
+        <h1>用户登录</h1>
+
+
+        <form action="/quiz/login/log" method="GET">
+
+            <input class="text" id="username" name="username"
+                   onblur="if (this.value == '') {this.value = '用户名';}"
+                   onfocus="this.value = '';" type="text"
+                   value="用户名">
+            <input id="password" name="password"
+                   onblur="if (this.value == '') {this.value = '000000';}"
+                   onfocus="this.value = '';"
+                   type="password"
+                   value="000000">
+            <div class="submit">
+                用户类型&nbsp;&nbsp;&nbsp;
+                <select class="form-control" id="sel" name="type">
+                    <option>店员</option>
+                    <option>店长</option>
+                    <option>经理</option>
+                </select>
+
+                <br>
+                .
+                <input type="submit" value="登陆">
+
+            </div>
+            <!-- <p><a href="#">Forgot Password ?</a></p> -->
+        </form>
+    </div>
+</div>
+<!-----//end-main---->
+
 
 <script>
-	alert("账户或密码错误！");
+    alert("账户或密码错误！");
 </script>
 </body>
 

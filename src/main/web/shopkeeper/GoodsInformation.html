@@ -15,177 +15,176 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/student.css">
+    <link href="css/common.css" rel="stylesheet">
+    <link href="css/student.css" rel="stylesheet">
     <script src="js/jquery-1.9.1.min.js"></script>
 </head>
 <body>
-	<!-- 头部样式 -->
-    <div class="container">
-        <div class="content">
-            <div class="header clearfix">
-                <div class="top fl">货物信息</div>
-                <div class="bottom fr">
-					
-                    <a id="emit" href="javascript:;">编辑</a>
-                    <a id="keep" href="javascript:;">保存</a>
-                </div>
+<!-- 头部样式 -->
+<div class="container">
+    <div class="content">
+        <div class="header clearfix">
+            <div class="top fl">货物信息</div>
+            <div class="bottom fr">
+
+                <a href="javascript:;" id="emit">编辑</a>
+                <a href="javascript:;" id="keep">保存</a>
             </div>
-            <div class="main">
-               
-                
-                <div class="content clearfix">
-                    <div class="left fl">
-					
-                        <div>
-						    <label for="">货物编号：</label>
-						    <input id="xstu_id" type="text" value="" disabled/>
-						</div>
-						<div>
-                            <label for="">货物名称：</label>
-                            <input id="stu_name" type="text" value=""  disabled/>
-                        </div>
-						<div>
-						    <label for="">库存数量：</label>
-						    <input id="goods_number" type="number" value=""  disabled/>
-						</div>
-						<!-- 学生性别，注入值位置 -->
-                   <!--     <div>
-                            <label for="">性别：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                            男：<input type="radio" name="sex" value="0" style="width: 20px; margin-top: 12px;" checked>
-                            女：<input type="radio" name="sex" value="1" style="width: 20px;">
-                        </div>
-						 -->
-						<!-- 班级编号，注入值位置 -->
-				<!-- 		<div>
-						    <label for="">班级编号：</label>
-						    <input id="classId" type="text" value="" disabled>
-						</div> -->
-                      
-                      <!-- 入学年份注入值位置 -->
-                      <!-- <div>
-                          <label for="">入职年份：</label>
-                          <input id="inyear" type="number" value="1999" disabled>
-                      </div>
-                    </div> -->
-					
-                        
-                       
-         
-       
-		
-	   <script type="text/javascript">
-		   //获取学生的信息
-		   var urll = "/quiz/Tea/findTeacher";
-		   $.ajax({
-		   	url:urll,
-		   	type:"GET",
-		   	dataType:"json",
-		   	success:function(str){
-		   		document.getElementById("stu_name").value = str.teacherName;
-		   		document.getElementById("xstu_id").value = str.teacherId;
-				document.getElementById("classId").value = str.classId;
-				if(str.teacherSex==1){
-					
-					
-					
-					$('input[type=radio][value=1]')[0].checked = true;
-				
-				}
-				else{
-					
-					$('input[type=radio][value=0]')[0].checked = true;
-				}
-				
-		   	},
-		   	error:function(){
-		   		alert("error");
-		   	}
-		   	
-		   });
-		   
-	   </script>
-    <script >
-		document.getElementById("stu_name").value = "";
-		
-	</script>
-    <script>
-        $('#politics i').on('click', function() {
-            $(this).siblings('ul').show();
-			
-        });
-        $('#politics ul li').on('click', function() {
-            var selTxt = $(this).text();
-            $('#politics a').text(selTxt);
-            $('#politics ul').hide();
-        });
-        $('#child i').on('click', function() {
-            $(this).siblings('ul').show();
-        });
-        $('#child ul li').on('click', function() {
-            var selTxt = $(this).text();
-            $('#child a').text(selTxt);
-            $('#child ul').hide();
-        });
-        $('#emit').on('click',function(){
-			$('input').removeAttr('disabled');
-			document.getElementById("xstu_id").disabled = "disabled";
-			
-		});
-		$('#keep').on('click',function(){
-			$('input').attr('disabled','disabled');
-			
-				var queryurl = "/quiz/Stu/savestudent";
-				var exschild = document.getElementsByName("sex");
-				var sexx = 0;
-				
-				if($(exschild[1]).prop("checked")==true){
-				sexx=1;
-				
-				}
-				$.ajax({
-					url:queryurl,
-					type:"GET",
-					dataType:"json",
-					data:{"username":document.getElementById("stu_name").value,"classId":document.getElementById("classId").value,"sex":sexx},
-					success:function(str){
-						alert("保存成功！");
-						
-						
-					},
-					error:function(){
-						alert("学号不可更改");
-					}
-					
-				});
-			
-		});
-    	$(document).ready(function(){
-    		$.ajax({
-	    		url: "http://101.201.154.205:9090/bm/bmList",
-	    		type: 'post',
-	    		data: {
-	    			t: Math.random()
-	    		},
-	    		dataType: 'jsonp',
-	    		'jsonp': 'callback'
-	    	}).then(function(res){
-	    		console.log(res)
-	//      		var stu_name = $('#stu_name').val();
-				for (var i=0; i<res.length; i++) {
-	    			$('#stu_name').attr('value',res[i].stu_name);
-	    			$('#sex').attr('value',res[i].sex);
-	    			$('#xstu_id').attr('value',res[i].xstu_id);
-	    			$('#inyear').attr('value',res[i].inyear);
-	    			$('#birthday').attr('value',res[i].birthday);
-					$('#classId').attr('value',res[i].classId);
-	    			
-	    		}
-	    	},function(){
-	    		console.log('error');
-	    	});
-    	});
-    </script>
+        </div>
+        <div class="main">
+
+
+            <div class="content clearfix">
+                <div class="left fl">
+
+                    <div>
+                        <label for="">货物编号：</label>
+                        <input disabled id="xstu_id" type="text" value=""/>
+                    </div>
+                    <div>
+                        <label for="">货物名称：</label>
+                        <input disabled id="stu_name" type="text" value=""/>
+                    </div>
+                    <div>
+                        <label for="">库存数量：</label>
+                        <input disabled id="goods_number" type="number"
+                               value=""/>
+                    </div>
+                    <!-- 学生性别，注入值位置 -->
+                    <!--     <div>
+                             <label for="">性别：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                             男：<input type="radio" name="sex" value="0" style="width: 20px; margin-top: 12px;" checked>
+                             女：<input type="radio" name="sex" value="1" style="width: 20px;">
+                         </div>
+                          -->
+                    <!-- 班级编号，注入值位置 -->
+                    <!-- 		<div>
+                                <label for="">班级编号：</label>
+                                <input id="classId" type="text" value="" disabled>
+                            </div> -->
+
+                    <!-- 入学年份注入值位置 -->
+                    <!-- <div>
+                        <label for="">入职年份：</label>
+                        <input id="inyear" type="number" value="1999" disabled>
+                    </div>
+                  </div> -->
+
+
+                    <script type="text/javascript">
+                        //获取学生的信息
+                        var urll = "/quiz/Tea/findTeacher";
+                        $.ajax({
+                            url: urll,
+                            type: "GET",
+                            dataType: "json",
+                            success: function (str) {
+                                document.getElementById("stu_name").value = str.teacherName;
+                                document.getElementById("xstu_id").value = str.teacherId;
+                                document.getElementById("classId").value = str.classId;
+                                if (str.teacherSex == 1) {
+
+
+                                    $('input[type=radio][value=1]')[0].checked = true;
+
+                                } else {
+
+                                    $('input[type=radio][value=0]')[0].checked = true;
+                                }
+
+                            },
+                            error: function () {
+                                alert("error");
+                            }
+
+                        });
+
+                    </script>
+                    <script>
+                        document.getElementById("stu_name").value = "";
+
+                    </script>
+                    <script>
+                        $('#politics i').on('click', function () {
+                            $(this).siblings('ul').show();
+
+                        });
+                        $('#politics ul li').on('click', function () {
+                            var selTxt = $(this).text();
+                            $('#politics a').text(selTxt);
+                            $('#politics ul').hide();
+                        });
+                        $('#child i').on('click', function () {
+                            $(this).siblings('ul').show();
+                        });
+                        $('#child ul li').on('click', function () {
+                            var selTxt = $(this).text();
+                            $('#child a').text(selTxt);
+                            $('#child ul').hide();
+                        });
+                        $('#emit').on('click', function () {
+                            $('input').removeAttr('disabled');
+                            document.getElementById("xstu_id").disabled = "disabled";
+
+                        });
+                        $('#keep').on('click', function () {
+                            $('input').attr('disabled', 'disabled');
+
+                            var queryurl = "/quiz/Stu/savestudent";
+                            var exschild = document.getElementsByName("sex");
+                            var sexx = 0;
+
+                            if ($(exschild[1]).prop("checked") == true) {
+                                sexx = 1;
+
+                            }
+                            $.ajax({
+                                url: queryurl,
+                                type: "GET",
+                                dataType: "json",
+                                data: {
+                                    "username": document.getElementById("stu_name").value,
+                                    "classId": document.getElementById("classId").value,
+                                    "sex": sexx
+                                },
+                                success: function (str) {
+                                    alert("保存成功！");
+
+
+                                },
+                                error: function () {
+                                    alert("学号不可更改");
+                                }
+
+                            });
+
+                        });
+                        $(document).ready(function () {
+                            $.ajax({
+                                url: "http://101.201.154.205:9090/bm/bmList",
+                                type: 'post',
+                                data: {
+                                    t: Math.random()
+                                },
+                                dataType: 'jsonp',
+                                'jsonp': 'callback'
+                            }).then(function (res) {
+                                console.log(res)
+                                //      		var stu_name = $('#stu_name').val();
+                                for (var i = 0; i < res.length; i++) {
+                                    $('#stu_name').attr('value', res[i].stu_name);
+                                    $('#sex').attr('value', res[i].sex);
+                                    $('#xstu_id').attr('value', res[i].xstu_id);
+                                    $('#inyear').attr('value', res[i].inyear);
+                                    $('#birthday').attr('value', res[i].birthday);
+                                    $('#classId').attr('value', res[i].classId);
+
+                                }
+                            }, function () {
+                                console.log('error');
+                            });
+                        });
+                    </script>
 
 </body>
 </html>

@@ -25,7 +25,7 @@ hr,
 p,
 blockquote,
 
-/* structural elements 结构元素 */
+    /* structural elements 结构元素 */
 
 dl,
 dt,
@@ -34,11 +34,11 @@ ul,
 ol,
 li,
 
-/* list elements 列表元素 */
+    /* list elements 列表元素 */
 
 pre,
 
-/* text formatting elements 文本格式元素 */
+    /* text formatting elements 文本格式元素 */
 
 form,
 fieldset,
@@ -47,79 +47,85 @@ button,
 input,
 textarea,
 
-/* form elements 表单元素 */
+    /* form elements 表单元素 */
 
 th,
 td
-/* table elements 表格元素 */
+    /* table elements 表格元素 */
 
 {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	text-decoration: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
 }
 
 /*
  * 完美轻拂动
  */
-.clearfix:after{
-	clear: both;
-	display: block;
-	content: '';
+.clearfix:after {
+    clear: both;
+    display: block;
+    content: '';
 }
 
 /*
  * IE6兼容问题的清除浮动
  */
-.clearfix{
-	zoom: 1;
+.clearfix {
+    zoom: 1;
 }
 
 /*
  * 左浮动
  */
-.fl{
-	float: left;
+.fl {
+    float: left;
 }
 
 /*
  * 有浮动
  */
-.fr{
-	float: right;
+.fr {
+    float: right;
 }
 
 /*
  * 安全距离，容器
  */
 
-.container{
-	width:100%;
-	background: #eeeeee;
-	/*padding:30px 60px 65px 30px;*/
+.container {
+    width: 100%;
+    background: #eeeeee;
+    /*padding:30px 60px 65px 30px;*/
 }
-.content{
-	width:780px;
-	background: #ffffff;
-	-moz-border-radius:8px;
-	-webkit-border-radius:8px;
-	border-radius: 8px;
-	margin: 30px auto;
+
+.content {
+    width: 780px;
+    background: #ffffff;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    margin: 30px auto;
 }
-b,strong{
-	font-weight: normal;
+
+b, strong {
+    font-weight: normal;
 }
-i,em{
-	font-style: normal;
+
+i, em {
+    font-style: normal;
 }
-a{
-	text-decoration: none;
+
+a {
+    text-decoration: none;
 }
-li{
-	list-style: none;
+
+li {
+    list-style: none;
 }
-body,html{
-	background: #eeeeee;
-	height: 100%;
+
+body, html {
+    background: #eeeeee;
+    height: 100%;
 }

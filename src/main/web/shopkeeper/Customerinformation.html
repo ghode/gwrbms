@@ -15,173 +15,175 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/student.css">
+    <link href="css/common.css" rel="stylesheet">
+    <link href="css/student.css" rel="stylesheet">
     <script src="js/jquery-1.9.1.min.js"></script>
 </head>
 <body>
-	<!-- 头部样式 -->
-    <div class="container">
-        <div class="content">
-            <div class="header clearfix">
-                <div class="top fl">客户信息</div>
-                <div class="bottom fr">
-					
-                    <a id="emit" href="javascript:;">编辑</a>
-                    <a id="keep" href="javascript:;">保存</a>
-                </div>
+<!-- 头部样式 -->
+<div class="container">
+    <div class="content">
+        <div class="header clearfix">
+            <div class="top fl">客户信息</div>
+            <div class="bottom fr">
+
+                <a href="javascript:;" id="emit">编辑</a>
+                <a href="javascript:;" id="keep">保存</a>
             </div>
-            <div class="main">
-               
-                
-                <div class="content clearfix">
-                    <div class="left fl">
-						<div>
-                            <label for="">姓名：</label>
-                            <input id="stu_name" type="text" value=""  disabled/>
-                        </div>
-						
-						
-                        <div>
-                            <label for="">性别：</label>
-                                男<input type="radio" name="sex" value="0" style="width: 20px; margin-top: 12px;" checked>
-								女<input type="radio" name="sex" value="0" style="width: 20px; margin-top: 12px;" checked>
-						</div>
-						<div>
-						    <label for="">客户类型：</label>
-						        批发<input type="radio" name="va" value="0" style="width: 20px; margin-top: 12px;" checked>
-								零售<input type="radio" name="va" value="0" style="width: 20px; margin-top: 12px;" checked>
-						</div>
-						<!-- 手机号-->
-						<div>
-						    <label for="">手机号：</label>
-						    <input id="classId" type="text" value="" disabled>
-						</div>
-                      
-                      <!-- 入学年份注入值位置 -->
-                      <!-- <div>
-                          <label for="">入学年份：</label>
-                          <input id="inyear" type="number" value="2017" disabled>
-                      </div>
-                    </div> -->
-					
-                        
-                       
-         
-       
-		
-	   <script type="text/javascript">
-		   //获取学生的信息
-		   var urll = "/quiz/Stu/findstudent";
-		   $.ajax({
-		   	url:urll,
-		   	type:"GET",
-		   	dataType:"json",
-		   	success:function(str){
-		   		document.getElementById("stu_name").value = str.studentName;
-		   		document.getElementById("xstu_id").value = str.studentId;
-				document.getElementById("classId").value = str.classId;
-				if(str.studentSex==0){
-					
-					
-					
-					$('input[type=radio][value=1]')[0].checked = true;
-				
-				}
-				else{
-					
-					$('input[type=radio][value=0]')[0].checked = true;
-				}
-				
-		   	},
-		   	error:function(){
-		   		alert("error");
-		   	}
-		   	
-		   });
-		   
-	   </script>
-    <script >
-		document.getElementById("stu_name").value = "avc";
-		
-	</script>
-    <script>
-        $('#politics i').on('click', function() {
-            $(this).siblings('ul').show();
-			
-        });
-        $('#politics ul li').on('click', function() {
-            var selTxt = $(this).text();
-            $('#politics a').text(selTxt);
-            $('#politics ul').hide();
-        });
-        $('#child i').on('click', function() {
-            $(this).siblings('ul').show();
-        });
-        $('#child ul li').on('click', function() {
-            var selTxt = $(this).text();
-            $('#child a').text(selTxt);
-            $('#child ul').hide();
-        });
-        $('#emit').on('click',function(){
-			$('input').removeAttr('disabled');
-			document.getElementById("xstu_id").disabled = "disabled";
-			
-		});
-		$('#keep').on('click',function(){
-			$('input').attr('disabled','disabled');
-			
-				var queryurl = "/quiz/Stu/savestudent";
-				var exschild = document.getElementsByName("sex");
-				var sexx = 0;
-				
-				if($(exschild[1]).prop("checked")==true){
-				sexx=1;
-				
-				}
-				$.ajax({
-					url:queryurl,
-					type:"GET",
-					dataType:"json",
-					data:{},
-					success:function(str){
-						alert("保存成功！");
-						
-						
-					},
-					error:function(){
-						alert("学号不可更改");
-					}
-					
-				});
-			
-		});
-    	$(document).ready(function(){
-    		$.ajax({
-	    		url: "http://101.201.154.205:9090/bm/bmList",
-	    		type: 'post',
-	    		data: {
-	    			t: Math.random()
-	    		},
-	    		dataType: 'jsonp',
-	    		'jsonp': 'callback'
-	    	}).then(function(res){
-	    		console.log(res)
-	//      		var stu_name = $('#stu_name').val();
-				for (var i=0; i<res.length; i++) {
-	    			$('#stu_name').attr('value',res[i].stu_name);
-	    			$('#sex').attr('value',res[i].sex);
-	    			$('#xstu_id').attr('value',res[i].xstu_id);
-	    			$('#inyear').attr('value',res[i].inyear);
-	    			$('#birthday').attr('value',res[i].birthday);
-					$('#classId').attr('value',res[i].classId);
-	    			
-	    		}
-	    	},function(){
-	    		console.log('error');
-	    	});
-    	});
-    </script>
+        </div>
+        <div class="main">
+
+
+            <div class="content clearfix">
+                <div class="left fl">
+                    <div>
+                        <label for="">姓名：</label>
+                        <input disabled id="stu_name" type="text" value=""/>
+                    </div>
+
+
+                    <div>
+                        <label for="">性别：</label>
+                        男<input checked name="sex"
+                                style="width: 20px; margin-top: 12px;"
+                                type="radio" value="0">
+                        女<input checked name="sex"
+                                style="width: 20px; margin-top: 12px;"
+                                type="radio" value="0">
+                    </div>
+                    <div>
+                        <label for="">客户类型：</label>
+                        批发<input checked name="va"
+                                 style="width: 20px; margin-top: 12px;"
+                                 type="radio" value="0">
+                        零售<input checked name="va"
+                                 style="width: 20px; margin-top: 12px;"
+                                 type="radio" value="0">
+                    </div>
+                    <!-- 手机号-->
+                    <div>
+                        <label for="">手机号：</label>
+                        <input disabled id="classId" type="text" value="">
+                    </div>
+
+                    <!-- 入学年份注入值位置 -->
+                    <!-- <div>
+                        <label for="">入学年份：</label>
+                        <input id="inyear" type="number" value="2017" disabled>
+                    </div>
+                  </div> -->
+
+
+                    <script type="text/javascript">
+                        //获取学生的信息
+                        var urll = "/quiz/Stu/findstudent";
+                        $.ajax({
+                            url: urll,
+                            type: "GET",
+                            dataType: "json",
+                            success: function (str) {
+                                document.getElementById("stu_name").value = str.studentName;
+                                document.getElementById("xstu_id").value = str.studentId;
+                                document.getElementById("classId").value = str.classId;
+                                if (str.studentSex == 0) {
+
+
+                                    $('input[type=radio][value=1]')[0].checked = true;
+
+                                } else {
+
+                                    $('input[type=radio][value=0]')[0].checked = true;
+                                }
+
+                            },
+                            error: function () {
+                                alert("error");
+                            }
+
+                        });
+
+                    </script>
+                    <script>
+                        document.getElementById("stu_name").value = "avc";
+
+                    </script>
+                    <script>
+                        $('#politics i').on('click', function () {
+                            $(this).siblings('ul').show();
+
+                        });
+                        $('#politics ul li').on('click', function () {
+                            var selTxt = $(this).text();
+                            $('#politics a').text(selTxt);
+                            $('#politics ul').hide();
+                        });
+                        $('#child i').on('click', function () {
+                            $(this).siblings('ul').show();
+                        });
+                        $('#child ul li').on('click', function () {
+                            var selTxt = $(this).text();
+                            $('#child a').text(selTxt);
+                            $('#child ul').hide();
+                        });
+                        $('#emit').on('click', function () {
+                            $('input').removeAttr('disabled');
+                            document.getElementById("xstu_id").disabled = "disabled";
+
+                        });
+                        $('#keep').on('click', function () {
+                            $('input').attr('disabled', 'disabled');
+
+                            var queryurl = "/quiz/Stu/savestudent";
+                            var exschild = document.getElementsByName("sex");
+                            var sexx = 0;
+
+                            if ($(exschild[1]).prop("checked") == true) {
+                                sexx = 1;
+
+                            }
+                            $.ajax({
+                                url: queryurl,
+                                type: "GET",
+                                dataType: "json",
+                                data: {},
+                                success: function (str) {
+                                    alert("保存成功！");
+
+
+                                },
+                                error: function () {
+                                    alert("学号不可更改");
+                                }
+
+                            });
+
+                        });
+                        $(document).ready(function () {
+                            $.ajax({
+                                url: "http://101.201.154.205:9090/bm/bmList",
+                                type: 'post',
+                                data: {
+                                    t: Math.random()
+                                },
+                                dataType: 'jsonp',
+                                'jsonp': 'callback'
+                            }).then(function (res) {
+                                console.log(res)
+                                //      		var stu_name = $('#stu_name').val();
+                                for (var i = 0; i < res.length; i++) {
+                                    $('#stu_name').attr('value', res[i].stu_name);
+                                    $('#sex').attr('value', res[i].sex);
+                                    $('#xstu_id').attr('value', res[i].xstu_id);
+                                    $('#inyear').attr('value', res[i].inyear);
+                                    $('#birthday').attr('value', res[i].birthday);
+                                    $('#classId').attr('value', res[i].classId);
+
+                                }
+                            }, function () {
+                                console.log('error');
+                            });
+                        });
+                    </script>
 
 </body>
 </html>

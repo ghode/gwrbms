@@ -10,16 +10,36 @@
  * ghode@cirnocraft.im or directly ignore this, which will be interesting.
  */
 
-;(function (doc, win, undefined) {
-    var docEl = doc.documentElement,
-        resizeEvt = 'orientationchange' in win ? 'orientationchange' : 'resize',
-        recalc = function () {
-            var clientWidth = docEl.clientWidth;
-            if (clientWidth === undefined) return;
-            docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
-        };
-    if (doc.addEventListener === undefined) return;
-    win.addEventListener(resizeEvt, recalc, false);
-    doc.addEventListener('DOMContentLoaded', recalc, false)
+package com.African411.domain;
 
-})(document, window);
+public class Account {
+    private Integer id;
+
+    private String name;
+
+    private String password;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+}

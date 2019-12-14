@@ -10,16 +10,20 @@
  * ghode@cirnocraft.im or directly ignore this, which will be interesting.
  */
 
-;(function (doc, win, undefined) {
-    var docEl = doc.documentElement,
-        resizeEvt = 'orientationchange' in win ? 'orientationchange' : 'resize',
-        recalc = function () {
-            var clientWidth = docEl.clientWidth;
-            if (clientWidth === undefined) return;
-            docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
-        };
-    if (doc.addEventListener === undefined) return;
-    win.addEventListener(resizeEvt, recalc, false);
-    doc.addEventListener('DOMContentLoaded', recalc, false)
+package com.African411.dao;
 
-})(document, window);
+import com.African411.domain.Account;
+
+import java.util.List;
+
+public interface AccountMapper {
+    int deleteByPrimaryKey(Integer id);
+
+    int insert(Account record);
+
+    Account selectByPrimaryKey(Integer id);
+
+    List<Account> selectAll();
+
+    int updateByPrimaryKey(Account record);
+}

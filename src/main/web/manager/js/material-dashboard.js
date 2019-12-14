@@ -13,7 +13,6 @@
 // Material Dashboard Wizard Functions
 
 
-
 var searchVisible = 0;
 var transparent = true;
 
@@ -29,7 +28,7 @@ var seq = 0, delays = 80, durations = 500;
 var seq2 = 0, delays2 = 80, durations2 = 500;
 
 
-$(document).ready(function(){
+$(document).ready(function () {
 
     $sidebar = $('.sidebar');
 
@@ -46,16 +45,16 @@ $(document).ready(function(){
     $('[rel="tooltip"]').tooltip();
 
 
-    $('.form-control').on("focus", function(){
+    $('.form-control').on("focus", function () {
         $(this).parent('.input-group').addClass("input-group-focus");
-    }).on("blur", function(){
+    }).on("blur", function () {
         $(this).parent(".input-group").removeClass("input-group-focus");
     });
 
 });
 
 // activate collapse right menu when the windows is resized
-$(window).resize(function(){
+$(window).resize(function () {
     md.initSidebarsCheck();
 
     // reset the seq for charts drawing animations
@@ -64,25 +63,25 @@ $(window).resize(function(){
 });
 
 md = {
-    misc:{
+    misc: {
         navbar_menu_visible: 0,
         active_collapse: true,
         disabled_collapse_init: 0,
     },
 
-    checkSidebarImage: function(){
+    checkSidebarImage: function () {
         $sidebar = $('.sidebar');
         image_src = $sidebar.data('image');
 
-        if(image_src !== undefined){
+        if (image_src !== undefined) {
             sidebar_container = '<div class="sidebar-background" style="background-image: url(' + image_src + ') "/>'
             $sidebar.append(sidebar_container);
         }
     },
 
-    initSidebarsCheck: function(){
-        if($(window).width() <= 991){
-            if($sidebar.length != 0){
+    initSidebarsCheck: function () {
+        if ($(window).width() <= 991) {
+            if ($sidebar.length != 0) {
                 md.initRightMenu();
 
             } else {
@@ -92,31 +91,31 @@ md = {
 
     },
 
-    checkScrollForTransparentNavbar: debounce(function() {
-            if($(document).scrollTop() > 260 ) {
-                if(transparent) {
-                    transparent = false;
-                    $('.navbar-color-on-scroll').removeClass('navbar-transparent');
-                }
-            } else {
-                if( !transparent ) {
-                    transparent = true;
-                    $('.navbar-color-on-scroll').addClass('navbar-transparent');
-                }
+    checkScrollForTransparentNavbar: debounce(function () {
+        if ($(document).scrollTop() > 260) {
+            if (transparent) {
+                transparent = false;
+                $('.navbar-color-on-scroll').removeClass('navbar-transparent');
             }
+        } else {
+            if (!transparent) {
+                transparent = true;
+                $('.navbar-color-on-scroll').addClass('navbar-transparent');
+            }
+        }
     }, 17),
 
 
-    initRightMenu: debounce(function(){
+    initRightMenu: debounce(function () {
         $sidebar_wrapper = $('.sidebar-wrapper');
 
-        if(!mobile_menu_initialized){
+        if (!mobile_menu_initialized) {
             $navbar = $('nav').find('.navbar-collapse').first().clone(true);
 
             nav_content = '';
             mobile_menu_content = '';
 
-            $navbar.children('ul').each(function(){
+            $navbar.children('ul').each(function () {
 
                 content_buff = $(this).html();
                 nav_content = nav_content + content_buff;
@@ -133,14 +132,14 @@ md = {
             $nav_content.insertBefore($sidebar_nav);
             $navbar_form.insertBefore($nav_content);
 
-            $(".sidebar-wrapper .dropdown .dropdown-menu > li > a").click(function(event) {
+            $(".sidebar-wrapper .dropdown .dropdown-menu > li > a").click(function (event) {
                 event.stopPropagation();
 
             });
 
             mobile_menu_initialized = true;
         } else {
-            if($(window).width() > 991){
+            if ($(window).width() > 991) {
                 // reset all the additions that we made for the sidebar wrapper only if the screen is bigger than 991px
                 $sidebar_wrapper.find('.navbar-form').remove();
                 $sidebar_wrapper.find('.nav-mobile-menu').remove();
@@ -149,46 +148,46 @@ md = {
             }
         }
 
-        if(!toggle_initialized){
+        if (!toggle_initialized) {
             $toggle = $('.navbar-toggle');
 
-            $toggle.click(function (){
+            $toggle.click(function () {
 
-                if(mobile_menu_visible == 1) {
+                if (mobile_menu_visible == 1) {
                     $('html').removeClass('nav-open');
 
                     $('.close-layer').remove();
-                    setTimeout(function(){
+                    setTimeout(function () {
                         $toggle.removeClass('toggled');
                     }, 400);
 
                     mobile_menu_visible = 0;
                 } else {
-                    setTimeout(function(){
+                    setTimeout(function () {
                         $toggle.addClass('toggled');
                     }, 430);
 
 
                     main_panel_height = $('.main-panel')[0].scrollHeight;
                     $layer = $('<div class="close-layer"></div>');
-                    $layer.css('height',main_panel_height + 'px');
+                    $layer.css('height', main_panel_height + 'px');
                     $layer.appendTo(".main-panel");
 
-                    setTimeout(function(){
+                    setTimeout(function () {
                         $layer.addClass('visible');
                     }, 100);
 
-                    $layer.click(function() {
+                    $layer.click(function () {
                         $('html').removeClass('nav-open');
                         mobile_menu_visible = 0;
 
                         $layer.removeClass('visible');
 
-                         setTimeout(function(){
+                        setTimeout(function () {
                             $layer.remove();
                             $toggle.removeClass('toggled');
 
-                         }, 400);
+                        }, 400);
                     });
 
                     $('html').addClass('nav-open');
@@ -202,16 +201,16 @@ md = {
     }, 500),
 
 
-    initBootstrapNavbarMenu: debounce(function(){
+    initBootstrapNavbarMenu: debounce(function () {
 
-        if(!bootstrap_nav_initialized){
+        if (!bootstrap_nav_initialized) {
             $navbar = $('nav').find('.navbar-collapse').first().clone(true);
 
             nav_content = '';
             mobile_menu_content = '';
 
             //add the content from the regular header to the mobile menu
-            $navbar.children('ul').each(function(){
+            $navbar.children('ul').each(function () {
                 content_buff = $(this).html();
                 nav_content = nav_content + content_buff;
             });
@@ -230,40 +229,40 @@ md = {
             $navbar.find('button').removeClass('btn-round btn-fill btn-info btn-primary btn-success btn-danger btn-warning btn-neutral');
             $navbar.find('button').addClass('btn-simple btn-block');
 
-            $toggle.click(function (){
-                if(mobile_menu_visible == 1) {
+            $toggle.click(function () {
+                if (mobile_menu_visible == 1) {
                     $('html').removeClass('nav-open');
 
                     $('.close-layer').remove();
-                    setTimeout(function(){
+                    setTimeout(function () {
                         $toggle.removeClass('toggled');
                     }, 400);
 
                     mobile_menu_visible = 0;
                 } else {
-                    setTimeout(function(){
+                    setTimeout(function () {
                         $toggle.addClass('toggled');
                     }, 430);
 
                     $layer = $('<div class="close-layer"></div>');
                     $layer.appendTo(".wrapper-full-page");
 
-                    setTimeout(function(){
+                    setTimeout(function () {
                         $layer.addClass('visible');
                     }, 100);
 
 
-                    $layer.click(function() {
+                    $layer.click(function () {
                         $('html').removeClass('nav-open');
                         mobile_menu_visible = 0;
 
                         $layer.removeClass('visible');
 
-                         setTimeout(function(){
+                        setTimeout(function () {
                             $layer.remove();
                             $toggle.removeClass('toggled');
 
-                         }, 400);
+                        }, 400);
                     });
 
                     $('html').addClass('nav-open');
@@ -276,50 +275,50 @@ md = {
         }
     }, 500),
 
-    startAnimationForLineChart: function(chart){
+    startAnimationForLineChart: function (chart) {
 
-        chart.on('draw', function(data) {
-          if(data.type === 'line' || data.type === 'area') {
-            data.element.animate({
-              d: {
-                begin: 600,
-                dur: 700,
-                from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
-                to: data.path.clone().stringify(),
-                easing: Chartist.Svg.Easing.easeOutQuint
-              }
-            });
-          } else if(data.type === 'point') {
+        chart.on('draw', function (data) {
+            if (data.type === 'line' || data.type === 'area') {
+                data.element.animate({
+                    d: {
+                        begin: 600,
+                        dur: 700,
+                        from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
+                        to: data.path.clone().stringify(),
+                        easing: Chartist.Svg.Easing.easeOutQuint
+                    }
+                });
+            } else if (data.type === 'point') {
                 seq++;
                 data.element.animate({
-                  opacity: {
-                    begin: seq * delays,
-                    dur: durations,
-                    from: 0,
-                    to: 1,
-                    easing: 'ease'
-                  }
+                    opacity: {
+                        begin: seq * delays,
+                        dur: durations,
+                        from: 0,
+                        to: 1,
+                        easing: 'ease'
+                    }
                 });
             }
         });
 
         seq = 0;
     },
-    startAnimationForBarChart: function(chart){
+    startAnimationForBarChart: function (chart) {
 
-        chart.on('draw', function(data) {
-          if(data.type === 'bar'){
-              seq2++;
-              data.element.animate({
-                opacity: {
-                  begin: seq2 * delays2,
-                  dur: durations2,
-                  from: 0,
-                  to: 1,
-                  easing: 'ease'
-                }
-              });
-          }
+        chart.on('draw', function (data) {
+            if (data.type === 'bar') {
+                seq2++;
+                data.element.animate({
+                    opacity: {
+                        begin: seq2 * delays2,
+                        dur: durations2,
+                        from: 0,
+                        to: 1,
+                        easing: 'ease'
+                    }
+                });
+            }
         });
 
         seq2 = 0;
@@ -333,14 +332,14 @@ md = {
 // leading edge, instead of the trailing.
 
 function debounce(func, wait, immediate) {
-	var timeout;
-	return function() {
-		var context = this, args = arguments;
-		clearTimeout(timeout);
-		timeout = setTimeout(function() {
-			timeout = null;
-			if (!immediate) func.apply(context, args);
-		}, wait);
-		if (immediate && !timeout) func.apply(context, args);
-	};
+    var timeout;
+    return function () {
+        var context = this, args = arguments;
+        clearTimeout(timeout);
+        timeout = setTimeout(function () {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        }, wait);
+        if (immediate && !timeout) func.apply(context, args);
+    };
 };

@@ -12,5 +12,18 @@
 
 package com.African411.service;
 
+import com.African411.domain.Clerk;
+
+import java.util.List;
+
 public interface ClerkService {
+    int deleteClerk(Integer id);
+
+    int insertClerk(Clerk clerk);
+
+    Clerk selectClerk(Integer id);
+
+    List<Clerk> selectAll();
+
+    int updateClerk(Clerk clerk);
 }
