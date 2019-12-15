@@ -12,40 +12,38 @@
 
 package com.African411.service;
 
-import com.African411.dao.ClerkMapper;
-import com.African411.domain.Clerk;
+import com.African411.dao.RetailMapper;
+import com.African411.dao.TicketMapper;
+import com.African411.domain.Retail;
+import com.African411.domain.Ticket;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class ClerkServiceImpl implements ClerkService {
     @Autowired
-    private ClerkMapper clerkMapper;
+    private TicketMapper ticketMapper;
+
+    @Autowired
+    private RetailMapper retailMapper;
 
     @Override
-    public int deleteClerk(Integer id) {
-        return clerkMapper.deleteByPrimaryKey(id);
+    public void addTicket(Ticket ticket) {
+        ticketMapper.insert(ticket);
     }
 
     @Override
-    public int insertClerk(Clerk clerk) {
-        return clerkMapper.insert(clerk);
+    public void updateTicket(Ticket ticket) {
+        ticketMapper.updateByPrimaryKey(ticket);
     }
 
     @Override
-    public Clerk selectClerk(Integer id) {
-        return clerkMapper.selectByPrimaryKey(id);
+    public void deleteTicket(Ticket ticket) {
+        ticketMapper.deleteByPrimaryKey(ticket.getId());
     }
 
     @Override
-    public List<Clerk> selectAll() {
-        return clerkMapper.selectAll();
-    }
-
-    @Override
-    public int updateClerk(Clerk clerk) {
-        return clerkMapper.updateByPrimaryKey(clerk);
+    public void addRetail(Retail retail) {
+        retailMapper.insert(retail);
     }
 }

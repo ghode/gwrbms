@@ -10,26 +10,18 @@
  * ghode@cirnocraft.im or directly ignore this, which will be interesting.
  */
 
-package com.African411.domain;
+package com.African411.service;
 
-public class Admin {
-    private Integer id;
+import com.African411.domain.Ticket;
 
-    private String name;
+public interface TicketService {
+    void addTicket(Ticket ticket);
 
-    public Integer getId() {
-        return id;
-    }
+    void updateTicket(Ticket ticket);
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+    void deleteTicket(Ticket ticket);
 
-    public String getName() {
-        return name;
-    }
+    void deleteTicketById(Integer id);
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    Ticket selectTicket(Integer id);
 }

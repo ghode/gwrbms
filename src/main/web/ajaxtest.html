@@ -18,7 +18,7 @@
 </head>
 <script src="js/jquery-3.2.1.js"></script>
 <body>
-<input onclick="quary()" type="button" value="添加学生"/>
+<input onclick="query()" type="button" value="添加学生"/>
 </body>
 <script type="text/javascript">
 
@@ -26,27 +26,20 @@
 <script type="text/javascript">
     var num = 2;
 
-    function quary() {
+    function query() {
         alert("aa");
         var queryurl = "/quiz/Tea/queryAll";
         $.ajax({
             url: queryurl,
             type: "GET",
             dataType: "json",
-
             success: function (str) {
                 alert("ss");
-
-
             },
             error: function () {
                 alert("ff");
             }
-
         });
-
     }
-
-
 </script>
 </html>

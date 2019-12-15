@@ -12,29 +12,35 @@
 
 package com.African411.service;
 
+import com.African411.dao.RetailMapper;
 import com.African411.domain.Retail;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
-/**
- * 货物数据服务层
- *
- * @author Ghode
- */
-public interface RetailService {
+public class RetailServiceImpl implements RetailService {
+    @Autowired
+    private RetailMapper retailMapper;
+
     /**
      * 添加货物记录
      *
      * @param retail 一批货物
      */
-    void addRetail(Retail retail);
+    @Override
+    public void addRetail(Retail retail) {
+        retailMapper.insert(retail);
+    }
 
     /**
      * 查询货物记录
      *
      * @return 货物记录
      */
-    List<Retail> queryAll();
+    @Override
+    public List<Retail> queryAll() {
+        return retailMapper.selectAll();
+    }
 
     /**
      * 寻找货物记录
@@ -42,20 +48,29 @@ public interface RetailService {
      * @param id 货物ID
      * @return 货物记录
      */
-    Retail selectRetail(Integer id);
+    @Override
+    public Retail selectRetail(Integer id) {
+        return retailMapper.selectByPrimaryKey(id);
+    }
 
     /**
      * 删除货物记录
      *
      * @param id 货物ID
      */
-    void deleteRetail(Integer id);
+    @Override
+    public void deleteRetail(Integer id) {
+        retailMapper.deleteByPrimaryKey(id);
+    }
 
     /**
      * 更新货物记录
      *
      * @param retail 货物记录
      */
-    void updateRetail(Retail retail);
+    @Override
+    public void updateRetail(Retail retail) {
+        retailMapper.updateByPrimaryKey(retail);
 
+    }
 }
