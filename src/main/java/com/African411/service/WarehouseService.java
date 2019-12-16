@@ -12,5 +12,18 @@
 
 package com.African411.service;
 
-public interface ShopKeeperService {
+import com.African411.domain.Warehouse;
+
+import java.util.List;
+
+public interface WarehouseService {
+    void addWarehouse(Warehouse warehouse);
+
+    void deleteWarehouse(Warehouse warehouse);
+
+    void updateWarehouse(Warehouse warehouse);
+
+    Warehouse selectWarehouse(Integer id, Integer wareId);
+
+    List<Warehouse> queryAll();
 }

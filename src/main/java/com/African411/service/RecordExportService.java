@@ -12,20 +12,18 @@
 
 package com.African411.service;
 
-import com.African411.domain.Account;
+import com.African411.domain.RecordExport;
 
 import java.util.List;
 
-public interface AccountService {
-    void addAccount(Account account);
+public interface RecordExportService {
+    void addRecordExport(RecordExport recordExport);
 
-    void updateAccount(Account account);
+    void deleteRecordExport(RecordExport recordExport);
 
-    void deleteAccount(Account account);
+    void updateRecordExport(RecordExport recordExport);
 
-    Account selectAccount(Account account);
+    RecordExport selectRecordExport(Integer id);
 
-    Account selectAccountById(Integer id);
-
-    List<Account> queryAll();
+    List<RecordExport> queryAll();
 }

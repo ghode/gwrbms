@@ -12,5 +12,35 @@
 
 package com.African411.service;
 
-public interface ManagerService {
+import com.African411.domain.Warehouse;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class WarehouseServiceImpl implements WarehouseService {
+    @Override
+    public void addWarehouse(Warehouse warehouse) {
+
+    }
+
+    @Override
+    public void deleteWarehouse(Warehouse warehouse) {
+
+    }
+
+    @Override
+    public void updateWarehouse(Warehouse warehouse) {
+
+    }
+
+    @Override
+    public Warehouse selectWarehouse(Integer id, Integer wareId) {
+        return null;
+    }
+
+    @Override
+    public List<Warehouse> queryAll() {
+        return null;
+    }
 }

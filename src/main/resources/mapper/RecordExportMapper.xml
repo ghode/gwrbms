@@ -57,4 +57,90 @@
         select id, ware_id, warehouse_id, quantity, accepted
         from record_export
     </select>
+    <resultMap id="BaseResultMap" type="com.African411.domain.RecordExport">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="ware_id" jdbcType="INTEGER" property="wareId"/>
+        <result column="warehouse_id" jdbcType="INTEGER"
+                property="warehouseId"/>
+        <result column="quantity" jdbcType="DECIMAL" property="quantity"/>
+        <result column="accepted" jdbcType="BIT" property="accepted"/>
+    </resultMap>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete
+        from record_export
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" parameterType="com.African411.domain.RecordExport">
+        <selectKey keyProperty="id" order="AFTER"
+                   resultType="java.lang.Integer">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into record_export (ware_id, warehouse_id, quantity,
+        accepted)
+        values (#{wareId,jdbcType=INTEGER}, #{warehouseId,jdbcType=INTEGER},
+        #{quantity,jdbcType=DECIMAL},
+        #{accepted,jdbcType=BIT})
+    </insert>
+    <update id="updateByPrimaryKey"
+            parameterType="com.African411.domain.RecordExport">
+        update record_export
+        set ware_id      = #{wareId,jdbcType=INTEGER},
+            warehouse_id = #{warehouseId,jdbcType=INTEGER},
+            quantity     = #{quantity,jdbcType=DECIMAL},
+            accepted     = #{accepted,jdbcType=BIT}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer"
+            resultMap="BaseResultMap">
+        select id, ware_id, warehouse_id, quantity, accepted
+        from record_export
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <select id="selectAll" resultMap="BaseResultMap">
+        select id, ware_id, warehouse_id, quantity, accepted
+        from record_export
+    </select>
+    <resultMap id="BaseResultMap" type="com.African411.domain.RecordExport">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="ware_id" jdbcType="INTEGER" property="wareId"/>
+        <result column="warehouse_id" jdbcType="INTEGER"
+                property="warehouseId"/>
+        <result column="quantity" jdbcType="DECIMAL" property="quantity"/>
+        <result column="accepted" jdbcType="BIT" property="accepted"/>
+    </resultMap>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete
+        from record_export
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" parameterType="com.African411.domain.RecordExport">
+        <selectKey keyProperty="id" order="AFTER"
+                   resultType="java.lang.Integer">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into record_export (ware_id, warehouse_id, quantity,
+        accepted)
+        values (#{wareId,jdbcType=INTEGER}, #{warehouseId,jdbcType=INTEGER},
+        #{quantity,jdbcType=DECIMAL},
+        #{accepted,jdbcType=BIT})
+    </insert>
+    <update id="updateByPrimaryKey"
+            parameterType="com.African411.domain.RecordExport">
+        update record_export
+        set ware_id      = #{wareId,jdbcType=INTEGER},
+            warehouse_id = #{warehouseId,jdbcType=INTEGER},
+            quantity     = #{quantity,jdbcType=DECIMAL},
+            accepted     = #{accepted,jdbcType=BIT}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer"
+            resultMap="BaseResultMap">
+        select id, ware_id, warehouse_id, quantity, accepted
+        from record_export
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <select id="selectAll" resultMap="BaseResultMap">
+        select id, ware_id, warehouse_id, quantity, accepted
+        from record_export
+    </select>
 </mapper>
