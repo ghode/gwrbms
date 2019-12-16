@@ -32,16 +32,15 @@
 <body>
 <center>
     <br/><br/>
-    <h2>题目管理</h2>
-    <a href="javascript:showAddInput();">添加题目</a>
+    <h2>零售业务管理</h2>
+    <a href="javascript:showAddInput();">进行零售</a>
     <div id="addinfo" style="display:none">
         <form>
             <br>
-            题目编号：<br><input id="username" type="text"/><br>
+            仓库编号：<br><input id="username" type="number"/><br>
             <!--限制用户名只能用英文 下划线 或数字-->
-            题干：<br><input id="password" type="text"/><br>
-            选项A:（只能是汉字）<br><input id="name" type="text"/><br>
-            选项B:<br><input id="email" type="text"/><br>
+            货物编号：<br><input id="password" type="number"/><br>
+            售卖数量<br><input id="name" type="number"/><br>
             <!--            选项C:<br><input id="phone" type="text"/><br>-->
             <!--            选项D:<br><input id="qq" type="text"/><br>-->
             <!--            正确答案:<br><input id="uid" type="text"/><br><br>-->
@@ -56,21 +55,20 @@
 
         <table border="1" id="table" style="text-align:center">
             <tr>
-                <th>题目编号</th>
-                <th>题干</th>
-                <th>A</th>
-                <th>B</th>
+                <th>仓库编号</th>
+                <th>商品编号</th>
+                <th>售卖数量</th>
 <!--                <th>C</th>-->
 <!--                <th>D</th>-->
 <!--                <th>答案</th>-->
-<!--                <th>操作</th>-->
+                <th>操作</th>
 
             </tr>
 
         </table>
 
     </div>
-
+    <input type="submit" value="提交零售单" id="sub" name="sub">
 
 </center>
 
@@ -99,7 +97,7 @@
         document.getElementById('username').value = '';
         document.getElementById('password').value = '';
         document.getElementById('name').value = '';
-        document.getElementById('email').value = '';
+        //document.getElementById('email').value = '';
         // document.getElementById('phone').value = '';
         // document.getElementById('qq').value = '';
         // document.getElementById('uid').value = '';
@@ -131,7 +129,7 @@
         var username = document.getElementById('username').value;
         var password = document.getElementById('password').value;
         var name = document.getElementById('name').value;
-        var email = document.getElementById('email').value;
+        //var email = document.getElementById('email').value;
         // var phone = document.getElementById('phone').value;
         // var qq = document.getElementById('qq').value;
         // var uid = document.getElementById('uid').value;
@@ -159,7 +157,7 @@
                     arr[0] = e.questionId;
                     arr[1] = e.tigan;
                     arr[2] = e.selectionA;
-                    arr[3] = e.selectionB;
+                    //arr[3] = e.selectionB;
                     // arr[4] = e.selectionC;
                     // arr[5] = e.selectionD;
                     // arr[6] = e.answer;
@@ -172,9 +170,9 @@
                 });
 
             },
-            error: function () {
-                alert("fail");
-            }
+            // error: function () {
+            //     alert("fail");
+            // }
 
         });
 
@@ -188,11 +186,11 @@
         arr[0] = document.getElementById('username').value;
         arr[1] = document.getElementById('password').value;
         arr[2] = document.getElementById('name').value;
-        arr[3] = document.getElementById('email').value;
+        //arr[3] = document.getElementById('email').value;
         // arr[4] = document.getElementById('phone').value;
         // arr[5] = document.getElementById('qq').value;
         // arr[6] = document.getElementById('uid').value;
-        arr[4] = "<a style='text-align:center;color:#a61be0;cursor:pointer;' onclick='updateRow(this);'>修改</a> <a style='text-align:center;color:#a61be0;cursor:pointer;' onclick='delRow(this);'>删除</a>";
+        arr[3] = "<a style='text-align:center;color:#a61be0;cursor:pointer;' onclick='updateRow(this);'>修改</a> <a style='text-align:center;color:#a61be0;cursor:pointer;' onclick='delRow(this);'>删除</a>";
         var x = document.getElementById('table').insertRow(1); //获取第一行对象
 
         for (var i = 0; i < arr.length; i++) {
@@ -251,7 +249,7 @@
         document.getElementById('username').value = arr[0];
         document.getElementById('password').value = arr[1];
         document.getElementById('name').value = arr[2];
-        document.getElementById('email').value = arr[3];
+        //document.getElementById('email').value = arr[3];
         // document.getElementById('phone').value = arr[4];
         // document.getElementById('qq').value = arr[5];
         // document.getElementById('uid').value = arr[6];
@@ -277,5 +275,10 @@
     function aaa() {
         alert("111");
     }
+    $("#sub").click(function () {
+        window.location.href='sale.html';
+        alert("零售单提交成功");
+    });
 </script>
+
 </html>
