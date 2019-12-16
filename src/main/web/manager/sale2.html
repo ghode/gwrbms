@@ -11,62 +11,58 @@
   -->
 
 <!DOCTYPE html>
-<script src="../js/jquery-3.2.1.js"></script>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
-
-
-
-
-
-
-
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
-<title>题目增改</title>
-<script charset="utf-8" src="js/test.js" type="text/javascript"></script>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <title>批发业务</title>
+    <script charset="utf-8" src="js/test.js" type="text/javascript"></script>
 </head>
 <body>
 <center>
     <br/><br/>
-    <h2>题目管理</h2>
+    <h2>批发单</h2>
 
     <div class="table">
         <table border="1" id="table" style="text-align:center">
             <tr>
-                <th>题目编号</th>
-                <th>题干</th>
-                <th>A</th>
-                <th>B</th>
-                <th>C</th>
-                <th>D</th>
-                <th>答案</th>
-                <th>操作</th>
-<!--                <th>题目编号</th>-->
-<!--                <th>题干</th>-->
-<!--                <th>A</th>-->
-<!--                <th>B</th>-->
-<!--                <th>C</th>-->
+                <th>货物编号</th>
+                <th>货物名称</th>
+                <th>出货仓库</th>
+                <th>出货数量</th>
+                <th>本单利润</th>
+
 <!--                <th>D</th>-->
 <!--                <th>答案</th>-->
 <!--                <th>操作</th>-->
+                <!--                <th>题目编号</th>-->
+                <!--                <th>题干</th>-->
+                <!--                <th>A</th>-->
+                <!--                <th>B</th>-->
+                <!--                <th>C</th>-->
+                <!--                <th>D</th>-->
+                <!--                <th>答案</th>-->
+                <!--                <th>操作</th>-->
             </tr>
 
         </table>
-        <a href="javascript:showAddInput();">添加题目</a>
+        <a href="javascript:showAddInput();">新建业务</a>
     </div>
 
     <div id="addinfo" style="display:none">
         <form>
             <br>
-            题目编号：<br><input id="username" type="text"/><br>
             <!--限制用户名只能用英文 下划线 或数字-->
-            题干：<br><input id="password" type="text"/><br>
-            选项A:（只能是汉字）<br><input id="name" type="text"/><br>
-            选项B:<br><input id="email" type="text"/><br>
-            选项C:<br><input id="phone" type="text"/><br>
-            选项D:<br><input id="qq" type="text"/><br>
-            正确答案:<br><input id="uid" type="text"/><br><br>
+            货物编号：<br><input id="password" type="text"/><br>
+            出货仓库:<br><input id="email" type="text"/><br>
+            出货数量:<br><input id="phone" type="text"/><br>
+
+<!--            题干：<br><input id="password" type="text"/><br>-->
+<!--            选项A:（只能是汉字）<br><input id="name" type="text"/><br>-->
+<!--            选项B:<br><input id="email" type="text"/><br>-->
+<!--            选项C:<br><input id="phone" type="text"/><br>-->
+<!--            选项D:<br><input id="qq" type="text"/><br>-->
+<!--            正确答案:<br><input id="uid" type="text"/><br><br>-->
             <input id="btn_add" onclick="addInfo()" type="button" value="提交">
             <input id="btn_update" onclick="updateInfo()" style="display:none"
                    type="button" value="提交">
@@ -143,7 +139,7 @@
     }
 
     //----判断输入框的信息是否符合要求-----
-    var urll = "/quiz/Stu/findstudent";
+    var url = "/quiz/Stu/findstudent";
 
     function quary() {
 
