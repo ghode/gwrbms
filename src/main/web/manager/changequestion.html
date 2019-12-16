@@ -32,6 +32,7 @@
     <h2>题目管理</h2>
 
     <div class="table">
+        <a href="javascript:showAddInput();">添加题目</a>
         <table border="1" id="table" style="text-align:center">
             <tr>
                 <th>题目编号</th>
@@ -53,7 +54,7 @@
             </tr>
 
         </table>
-        <a href="javascript:showAddInput();">添加题目</a>
+
     </div>
 
     <div id="addinfo" style="display:none">
@@ -174,7 +175,7 @@
 
             },
             error: function () {
-                alert("ff");
+                alert("fail");
             }
 
         });

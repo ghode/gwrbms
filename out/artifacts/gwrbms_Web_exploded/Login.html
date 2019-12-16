@@ -11,7 +11,7 @@
   -->
 
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 <head>
     <title>Login</title>
     <meta charset="utf-8">
@@ -24,6 +24,7 @@
     function hideURLbar() {
         window.scrollTo(0, 1);
     } </script>
+    <script src="js/jquery-3.2.1.js"></script>
 </head>
 <style>
 
@@ -53,14 +54,14 @@
             <div class="submit">
                 用户类型&nbsp;&nbsp;&nbsp;
                 <select class="form-control" id="sel" name="type">
-                    <option value = 1>店员</option>
-                    <option value = 2>店长</option>
-                    <option value = 3>经理</option>
+                    <option>店员</option>
+                    <option>店长</option>
+                    <option>经理</option>
                 </select>
 
                 <br>
                 .
-                <input type="submit" value="登录" id="sub" name="sub">
+                <input type="submit" value="登录">
 
             </div>
             <!-- <p><a href="#">Forgot Password ?</a></p> -->
@@ -70,46 +71,10 @@
 <!-----//end-main---->
 
 
-<script>src = "js/jquery-3.2.1.js"</script>
-<script type="text/javascript">
-    $("#sub").click(function () {
-        var username = $.trim($("#username").val());
-        var password = $.trim($("#password").val());
-        var type = $.trim($("#sel").val());
-        if (username == "") {
-            alert("请输入用户名");
-            return false;
-        } else if (password == "") {
-            alert("请输入密码");
-            return false;
-        }
-        var data= {username:username,password:password,type:type};
-        $.ajax(
-            {
-                type: 'POST',
-                url: 'account/login/',
-                data: data,
-                dataType: 'json',
-                success:function(msg){
-                    //alert(msg);
-                    if(msg === "success"){
-                        if(type == 1){
-                            window.location.href = "clerk/ClerkIndex.html";
-                        }
-                        else if(type == 2){
-                            window.location.href = "shopkeeper/ShopkeeperIndex.html";
-                        }
-                        else {
-                            window.location.href = "manager/ManagerIndex.html";
-                        }
-                    }else{
-                        alert("登录失败，请重试!");
-                    }
-                }
-            }
-        );
+<script>
+//发送ajax,验证密码
 
-    });
+
 </script>
 </body>
 
