@@ -18,6 +18,10 @@
 <head>
     <meta charset="UTF-8">
     <title>货物调拨</title>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6f433078c8dd66b97af1e7b09531f5b5e3af3823
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'
           name='viewport'/>
@@ -27,6 +31,7 @@
 
     <!--  Material Dashboard CSS    -->
     <link href="css/material-dashboard.css" rel="stylesheet"/>
+<<<<<<< HEAD
 
 </head>
 <body>
@@ -44,6 +49,22 @@
             货物编号:<br><input id="name" type="number"/><br>
             调拨数量:<br><input id="email" type="number"/><br>
             <!--            选项C:<br><input id="phone" type="text"/><br>-->
+=======
+</head>
+<body>
+<center>
+    <br/><br/>
+    <h2>货物调拨</h2>
+    <a href="javascript:showAddInput();">开始调拨</a>
+    <div id="addinfo" style="display:none">
+        <form>
+            <br>
+            出货仓库编号：<br><input id="username" type="number"/><br>
+            <!--限制用户名只能用英文 下划线 或数字-->
+            入货仓库编号：<br><input id="password" type="number"/><br>
+            货物ID：<br><input id="name" type="number"/><br>
+            调拨数量:<br><input id="phone" type="text"/><br>
+>>>>>>> 6f433078c8dd66b97af1e7b09531f5b5e3af3823
             <!--            选项D:<br><input id="qq" type="text"/><br>-->
             <!--            正确答案:<br><input id="uid" type="text"/><br><br>-->
             <input id="btn_add" onclick="addInfo()" type="button" value="提交">
@@ -57,6 +78,7 @@
 
         <table border="1" id="table" style="text-align:center">
             <tr>
+<<<<<<< HEAD
                 <th>调出货物仓库</th>
                 <th>调入货物仓库</th>
                 <th>货物编号</th>
@@ -65,13 +87,28 @@
                 <!--                <th>D</th>-->
                 <!--                <th>答案</th>-->
                 <th>操作</th>
+=======
+                <th>出货仓库编号</th>
+                <th>入货仓库编号</th>
+                <th>货物ID</th>
+                <th>调拨数量</th>
+                <!--                <th>D</th>-->
+                <!--                <th>答案</th>-->
+<!--                <th>操作</th>-->
+>>>>>>> 6f433078c8dd66b97af1e7b09531f5b5e3af3823
 
             </tr>
 
         </table>
 
     </div>
+<<<<<<< HEAD
     <input type="submit" value="确认调拨" id="sub" name="sub">
+=======
+    <input type="submit" value="完成" id="sub" name="sub">
+
+</center>
+>>>>>>> 6f433078c8dd66b97af1e7b09531f5b5e3af3823
 
 </center>
 
@@ -101,7 +138,11 @@
         document.getElementById('username').value = '';
         document.getElementById('password').value = '';
         document.getElementById('name').value = '';
+<<<<<<< HEAD
         document.getElementById('email').value = '';
+=======
+        document.getElementById('phone').value = '';
+>>>>>>> 6f433078c8dd66b97af1e7b09531f5b5e3af3823
         // document.getElementById('phone').value = '';
         // document.getElementById('qq').value = '';
         // document.getElementById('uid').value = '';
@@ -133,7 +174,11 @@
         var username = document.getElementById('username').value;
         var password = document.getElementById('password').value;
         var name = document.getElementById('name').value;
+<<<<<<< HEAD
         var email = document.getElementById('email').value;
+=======
+        var email = document.getElementById('phone').value;
+>>>>>>> 6f433078c8dd66b97af1e7b09531f5b5e3af3823
         // var phone = document.getElementById('phone').value;
         // var qq = document.getElementById('qq').value;
         // var uid = document.getElementById('uid').value;
@@ -165,7 +210,11 @@
                     // arr[4] = e.selectionC;
                     // arr[5] = e.selectionD;
                     // arr[6] = e.answer;
+<<<<<<< HEAD
                     arr[4] = "<a style='text-align:center;color:#ba21ff;cursor:pointer;' onclick='updateRow(this);'>修改</a> <a style='text-align:center;color:#ba21ff;cursor:pointer;' onclick='delRow(this);'>删除</a>";
+=======
+                    // arr[4] = "<a style='text-align:center;color:#ba21ff;cursor:pointer;' onclick='updateRow(this);'>修改</a> <a style='text-align:center;color:#ba21ff;cursor:pointer;' onclick='delRow(this);'>删除</a>";
+>>>>>>> 6f433078c8dd66b97af1e7b09531f5b5e3af3823
                     var x = document.getElementById('table').insertRow(1); //获取第一行对象
 
                     for (var i = 0; i < arr.length; i++) {
@@ -190,11 +239,19 @@
         arr[0] = document.getElementById('username').value;
         arr[1] = document.getElementById('password').value;
         arr[2] = document.getElementById('name').value;
+<<<<<<< HEAD
         arr[3] = document.getElementById('email').value;
         // arr[4] = document.getElementById('phone').value;
         // arr[5] = document.getElementById('qq').value;
         // arr[6] = document.getElementById('uid').value;
         arr[4] = "<a style='text-align:center;color:#a61be0;cursor:pointer;' onclick='updateRow(this);'>修改</a> <a style='text-align:center;color:#a61be0;cursor:pointer;' onclick='delRow(this);'>删除</a>";
+=======
+        arr[3] = document.getElementById('phone').value;
+        // arr[4] = document.getElementById('phone').value;
+        // arr[5] = document.getElementById('qq').value;
+        // arr[6] = document.getElementById('uid').value;
+        // arr[3] = "<a style='text-align:center;color:#a61be0;cursor:pointer;' onclick='updateRow(this);'>修改</a> <a style='text-align:center;color:#a61be0;cursor:pointer;' onclick='delRow(this);'>删除</a>";
+>>>>>>> 6f433078c8dd66b97af1e7b09531f5b5e3af3823
         var x = document.getElementById('table').insertRow(1); //获取第一行对象
 
         for (var i = 0; i < arr.length; i++) {
@@ -253,8 +310,13 @@
         document.getElementById('username').value = arr[0];
         document.getElementById('password').value = arr[1];
         document.getElementById('name').value = arr[2];
+<<<<<<< HEAD
         document.getElementById('email').value = arr[3];
         // document.getElementById('phone').value = arr[4];
+=======
+        // document.getElementById('email').value = arr[3];
+        document.getElementById('phone').value = arr[3];
+>>>>>>> 6f433078c8dd66b97af1e7b09531f5b5e3af3823
         // document.getElementById('qq').value = arr[5];
         // document.getElementById('uid').value = arr[6];
 
@@ -281,7 +343,14 @@
     }
     $("#sub").click(function () {
         window.location.href='warehouse.html';
+<<<<<<< HEAD
         alert("调拨货物成功");
     });
 </script>
+=======
+        alert("调拨完成");
+    });
+</script>
+
+>>>>>>> 6f433078c8dd66b97af1e7b09531f5b5e3af3823
 </html>
