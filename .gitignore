@@ -28,3 +28,5 @@ out/artifacts/gwrbms_Web_exploded/META-INF/MANIFEST.MF
 .idea/gwrbms.iml
 .idea/runConfigurations/Tomcat.xml
 *.iml
+/.idea/
+/.settings/
