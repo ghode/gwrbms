@@ -19,6 +19,7 @@ public class Customer {
 
     private String tel;
 
+    //零售1 批发2
     private Integer type;
 
     public Integer getId() {
