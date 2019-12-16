@@ -11,19 +11,21 @@
   -->
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>Login</title>
     <meta charset="utf-8">
     <link href="css/style.css" rel='stylesheet' type='text/css'/>
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <script type="application/x-javascript"> addEventListener("load", function () {
-        setTimeout(hideURLbar, 0);
-    }, false);
+    <script type="application/x-javascript">
+        addEventListener("load", function () {
+            setTimeout(hideURLBar, 0);
+        }, false);
 
-    function hideURLbar() {
-        window.scrollTo(0, 1);
-    } </script>
+        function hideURLBar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
 </head>
 <style>
 
@@ -31,7 +33,6 @@
 
 <body>
 
-<!-----start-main---->
 
 <div class="main">
     <div class="login-form">
@@ -42,11 +43,11 @@
         <form action="/quiz/login/log" method="GET">
 
             <input class="text" id="username" name="username"
-                   onblur="if (this.value == '') {this.value = '用户名';}"
+                   onblur="if (this.value === '') {this.value = '用户名';}"
                    onfocus="this.value = '';" type="text"
                    value="用户名">
             <input id="password" name="password"
-                   onblur="if (this.value == '') {this.value = '000000';}"
+                   onblur="if (this.value === '') {this.value = '000000';}"
                    onfocus="this.value = '';"
                    type="password"
                    value="000000">
@@ -57,9 +58,7 @@
                     <option>店长</option>
                     <option>经理</option>
                 </select>
-
                 <br>
-                .
                 <input type="submit" value="登陆">
 
             </div>
@@ -67,7 +66,6 @@
         </form>
     </div>
 </div>
-<!-----//end-main---->
 
 
 <script>
