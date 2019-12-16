@@ -60,7 +60,7 @@
 
                 <br>
                 .
-                <input type="submit" value="登陆">
+                <input type="submit" value="登陆" id="sub" name="sub">
 
             </div>
             <!-- <p><a href="#">Forgot Password ?</a></p> -->
@@ -70,8 +70,38 @@
 <!-----//end-main---->
 
 
-<script>
+<script>src = "../js/jquery-3.2.1.js"</script>
+<script type="text/javascript">
+    $("#sub").click(function () {
+        var username = $.trim($("#username").val());
+        var password = $.trim($("#password").val());
+        var type = $.trim($("#sel").val());
+        if (username == "") {
+            alert("请输入用户名");
+            return false;
+        } else if (password == "") {
+            alert("请输入密码");
+            return false;
+        }
+        var data= {username:username,password:password,type:type};
+        $.ajax(
+            {
+                type: 'POST',
+                url: 'account/login/',
+                data: data,
+                dataType: 'json',
+                success:function(msg){
+                    //alert(msg);
+                    if(msg==1){
+                        window.location.href = "{:U('Index/personal')}";
+                    }else{
+                        alert("登录失败，请重试!");
+                    }
+                }
+            }
+        );
 
+    });
 </script>
 </body>
 
