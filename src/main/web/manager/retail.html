@@ -155,7 +155,7 @@
                     arr[4] = e.selectionC;
                     // arr[5] = e.selectionD;
                     // arr[6] = e.answer;
-                    arr[5] = "<a style='text-align:center;color:blue;cursor:pointer;' onclick='updateRow(this);'>修改</a> <a style='text-align:center;color:blue;cursor:pointer;' onclick='delRow(this);'>删除</a>";
+                    arr[5] = "<a style='text-align:center;color:#a61be0;cursor:pointer;' onclick='updateRow(this);'>修改</a> <a style='text-align:center;color:#a61be0;cursor:pointer;' onclick='delRow(this);'>删除</a>";
                     var x = document.getElementById('table').insertRow(1); //获取第一行对象
 
                     for (var i = 0; i < arr.length; i++) {
@@ -184,7 +184,7 @@
         arr[4] = document.getElementById('phone').value;
         // arr[5] = document.getElementById('qq').value;
         // arr[6] = document.getElementById('uid').value;
-        arr[5] = "<a style='text-align:center;color:blue;cursor:pointer;' onclick='updateRow(this);'>修改</a> <a style='text-align:center;color:blue;cursor:pointer;' onclick='delRow(this);'>删除</a>";
+        arr[5] = "<a style='text-align:center;color:#a61be0;cursor:pointer;' onclick='updateRow(this);'>修改</a> <a style='text-align:center;color:#a61be0;cursor:pointer;' onclick='delRow(this);'>删除</a>";
         var x = document.getElementById('table').insertRow(1); //获取第一行对象
 
         for (var i = 0; i < arr.length; i++) {
@@ -245,8 +245,8 @@
         document.getElementById('name').value = arr[2];
         document.getElementById('email').value = arr[3];
         document.getElementById('phone').value = arr[4];
-        document.getElementById('qq').value = arr[5];
-        document.getElementById('uid').value = arr[6];
+        // document.getElementById('qq').value = arr[5];
+        // document.getElementById('uid').value = arr[6];
 
     }
 
