@@ -1173,11 +1173,11 @@ output {
 }
 
 .ct-series-o .ct-point, .ct-series-o .ct-line, .ct-series-o .ct-bar, .ct-series-o .ct-slice-donut {
-    stroke: #a748ca;
+    stroke: #000000;
 }
 
 .ct-series-o .ct-slice-pie, .ct-series-o .ct-area {
-    fill: #a748ca;
+    fill: #000000;
 }
 
 .ct-square {
@@ -1657,7 +1657,7 @@ output {
 }
 
 .ct-blue {
-    stroke: #9c27b0 !important;
+    stroke: #000000 !important;
 }
 
 .ct-azure {
