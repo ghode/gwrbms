@@ -15,9 +15,11 @@ package com.African411.service;
 import com.African411.dao.RetailMapper;
 import com.African411.domain.Retail;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class RetailServiceImpl implements RetailService {
     @Autowired
     private RetailMapper retailMapper;

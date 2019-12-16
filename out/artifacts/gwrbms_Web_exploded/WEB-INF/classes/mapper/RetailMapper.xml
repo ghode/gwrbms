@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.African411.dao.RetailMapper">
+  <resultMap id="BaseResultMap" type="com.African411.domain.Retail">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="price_in" jdbcType="DECIMAL" property="priceIn" />
+    <result column="price_out1" jdbcType="DECIMAL" property="priceOut1" />
+    <result column="price_out2" jdbcType="DECIMAL" property="priceOut2" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from retail
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.African411.domain.Retail">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into retail (name, price_in, price_out1, 
+      price_out2)
+    values (#{name,jdbcType=VARCHAR}, #{priceIn,jdbcType=DECIMAL}, #{priceOut1,jdbcType=DECIMAL}, 
+      #{priceOut2,jdbcType=DECIMAL})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.African411.domain.Retail">
+    update retail
+    set name = #{name,jdbcType=VARCHAR},
+      price_in = #{priceIn,jdbcType=DECIMAL},
+      price_out1 = #{priceOut1,jdbcType=DECIMAL},
+      price_out2 = #{priceOut2,jdbcType=DECIMAL}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, name, price_in, price_out1, price_out2
+    from retail
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, name, price_in, price_out1, price_out2
+    from retail
+  </select>
+</mapper>

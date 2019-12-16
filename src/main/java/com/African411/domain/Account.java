@@ -19,6 +19,8 @@ public class Account {
 
     private String password;
 
+    private Short power;
+
     public Integer getId() {
         return id;
     }
@@ -41,5 +43,13 @@ public class Account {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Short getPower() {
+        return power;
+    }
+
+    public void setPower(Short power) {
+        this.power = power;
     }
 }

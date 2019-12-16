@@ -15,9 +15,9 @@ package com.African411.domain;
 public class Ticket {
     private Integer id;
 
-    private Long price;
+    private Integer wareId;
 
-    private String name;
+    private Integer warehouseId;
 
     public Integer getId() {
         return id;
@@ -27,19 +27,19 @@ public class Ticket {
         this.id = id;
     }
 
-    public Long getPrice() {
-        return price;
+    public Integer getWareId() {
+        return wareId;
     }
 
-    public void setPrice(Long price) {
-        this.price = price;
+    public void setWareId(Integer wareId) {
+        this.wareId = wareId;
     }
 
-    public String getName() {
-        return name;
+    public Integer getWarehouseId() {
+        return warehouseId;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setWarehouseId(Integer warehouseId) {
+        this.warehouseId = warehouseId;
     }
 }
