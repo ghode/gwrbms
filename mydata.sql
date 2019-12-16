@@ -13,7 +13,7 @@ File Encoding         : 65001
 Date: 2019-12-16 17:04:53
 */
 
-SET FOREIGN_KEY_CHECKS=0;
+SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
 -- Table structure for account

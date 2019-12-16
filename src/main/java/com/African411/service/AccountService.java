@@ -10,36 +10,18 @@
  * ghode@cirnocraft.im or directly ignore this, which will be interesting.
  */
 
-package com.African411.domain;
+package com.African411.service;
 
-public class Warehouse {
-    private Integer warehouseId;
+import com.African411.domain.Account;
 
-    private Integer id;
+public interface AccountService {
+    void addAccount(Account account);
 
-    private Long quantity;
+    void updateAccount(Account account);
 
-    public Integer getWarehouseId() {
-        return warehouseId;
-    }
+    void deleteAccount(Account account);
 
-    public void setWarehouseId(Integer warehouseId) {
-        this.warehouseId = warehouseId;
-    }
+    Account selectAccount(Account account);
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Long getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(Long quantity) {
-        this.quantity = quantity;
-    }
+    Account selectAccountById(Integer id);
 }
