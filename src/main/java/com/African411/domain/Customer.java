@@ -12,12 +12,14 @@
 
 package com.African411.domain;
 
-public class Ticket {
+public class Customer {
     private Integer id;
 
-    private Integer wareId;
+    private String name;
 
-    private Integer warehouseId;
+    private String tel;
+
+    private Integer type;
 
     public Integer getId() {
         return id;
@@ -27,19 +29,27 @@ public class Ticket {
         this.id = id;
     }
 
-    public Integer getWareId() {
-        return wareId;
+    public String getName() {
+        return name;
     }
 
-    public void setWareId(Integer wareId) {
-        this.wareId = wareId;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Integer getWarehouseId() {
-        return warehouseId;
+    public String getTel() {
+        return tel;
     }
 
-    public void setWarehouseId(Integer warehouseId) {
-        this.warehouseId = warehouseId;
+    public void setTel(String tel) {
+        this.tel = tel;
+    }
+
+    public Integer getType() {
+        return type;
+    }
+
+    public void setType(Integer type) {
+        this.type = type;
     }
 }

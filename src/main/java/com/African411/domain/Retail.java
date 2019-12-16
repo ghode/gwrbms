@@ -17,9 +17,11 @@ public class Retail {
 
     private String name;
 
-    private Long price;
+    private Long priceIn;
 
-    private Long quantity;
+    private Long priceOut1;
+
+    private Long priceOut2;
 
     public Integer getId() {
         return id;
@@ -37,19 +39,27 @@ public class Retail {
         this.name = name;
     }
 
-    public Long getPrice() {
-        return price;
+    public Long getPriceIn() {
+        return priceIn;
     }
 
-    public void setPrice(Long price) {
-        this.price = price;
+    public void setPriceIn(Long priceIn) {
+        this.priceIn = priceIn;
     }
 
-    public Long getQuantity() {
-        return quantity;
+    public Long getPriceOut1() {
+        return priceOut1;
     }
 
-    public void setQuantity(Long quantity) {
-        this.quantity = quantity;
+    public void setPriceOut1(Long priceOut1) {
+        this.priceOut1 = priceOut1;
+    }
+
+    public Long getPriceOut2() {
+        return priceOut2;
+    }
+
+    public void setPriceOut2(Long priceOut2) {
+        this.priceOut2 = priceOut2;
     }
 }

@@ -29,32 +29,30 @@ public class ClerkController {
 
     @Autowired
     private TicketService ticketService;
+
+
     @Autowired
     private RetailService retailService;
 
     @PostMapping("/add_ticket")
     @ResponseBody
     public String addTicket(@RequestBody Ticket ticket) {
-        if (ticket.getName().equals("") || ticket.getPrice() == 0) {
-            return "error";
-        } else {
-            ticketService.addTicket(ticket);
-            return "success";
-        }
+        ticketService.addTicket(ticket);
+        return "success";
     }
 
     @PostMapping("/modify_ticket")
     @ResponseBody
-    public String modifyTicket(Integer id, Long price, String name) {
+    public String modifyTicket(Integer id, Integer warehouseId,
+                               Integer wareId) {
         System.out.println("Receiving modify ticket info request from " + id);
         Ticket ticket = ticketService.selectTicket(id);
         if (ticket != null) {
-            ticket.setName(name);
-            ticket.setPrice(price);
+            ticket.setWareId(wareId);
+            ticket.setWarehouseId(warehouseId);
             ticketService.updateTicket(ticket);
             return "success";
         } else {
-
             return "error";
         }
     }
@@ -73,11 +71,13 @@ public class ClerkController {
     @PostMapping("/add_retail")
     @ResponseBody
     public String addRetail(@RequestBody Retail retail) {
-        if (!retail.getName().equals("") && retail.getPrice() != 0 && retail.getQuantity() != 0) {
-            retailService.addRetail(retail);
-            return "success";
-        } else {
-            return "error";
-        }
+//        TODO if (!retail.getName().equals("") && retail.getPrice() != 0 &&
+//        retail.getQuantity() != 0) {
+//            retailService.addRetail(retail);
+//            return "success";
+//        } else {
+//            return "error";
+//        }
+        return null;
     }
 }

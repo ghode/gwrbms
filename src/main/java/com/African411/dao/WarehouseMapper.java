@@ -10,36 +10,20 @@
  * ghode@cirnocraft.im or directly ignore this, which will be interesting.
  */
 
-package com.African411.domain;
+package com.African411.dao;
 
-public class Ticket {
-    private Integer id;
+import com.African411.domain.Warehouse;
 
-    private Integer wareId;
+import java.util.List;
 
-    private Integer warehouseId;
+public interface WarehouseMapper {
+    int deleteByPrimaryKey(Integer warehouseId);
 
-    public Integer getId() {
-        return id;
-    }
+    int insert(Warehouse record);
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+    Warehouse selectByPrimaryKey(Integer warehouseId);
 
-    public Integer getWareId() {
-        return wareId;
-    }
+    List<Warehouse> selectAll();
 
-    public void setWareId(Integer wareId) {
-        this.wareId = wareId;
-    }
-
-    public Integer getWarehouseId() {
-        return warehouseId;
-    }
-
-    public void setWarehouseId(Integer warehouseId) {
-        this.warehouseId = warehouseId;
-    }
+    int updateByPrimaryKey(Warehouse record);
 }

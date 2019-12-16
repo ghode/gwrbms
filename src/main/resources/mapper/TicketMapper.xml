@@ -16,8 +16,9 @@
 <mapper namespace="com.African411.dao.TicketMapper">
     <resultMap id="BaseResultMap" type="com.African411.domain.Ticket">
         <id column="id" jdbcType="INTEGER" property="id"/>
-        <result column="price" jdbcType="DECIMAL" property="price"/>
-        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="ware_id" jdbcType="INTEGER" property="wareId"/>
+        <result column="warehouse_id" jdbcType="INTEGER"
+                property="warehouseId"/>
     </resultMap>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
         delete
@@ -29,24 +30,24 @@
                    resultType="java.lang.Integer">
             SELECT LAST_INSERT_ID()
         </selectKey>
-        insert into ticket (price, name)
-        values (#{price,jdbcType=DECIMAL}, #{name,jdbcType=VARCHAR})
+        insert into ticket (ware_id, warehouse_id)
+        values (#{wareId,jdbcType=INTEGER}, #{warehouseId,jdbcType=INTEGER})
     </insert>
     <update id="updateByPrimaryKey"
             parameterType="com.African411.domain.Ticket">
         update ticket
-        set price = #{price,jdbcType=DECIMAL},
-            name  = #{name,jdbcType=VARCHAR}
+        set ware_id      = #{wareId,jdbcType=INTEGER},
+            warehouse_id = #{warehouseId,jdbcType=INTEGER}
         where id = #{id,jdbcType=INTEGER}
     </update>
     <select id="selectByPrimaryKey" parameterType="java.lang.Integer"
             resultMap="BaseResultMap">
-        select id, price, name
+        select id, ware_id, warehouse_id
         from ticket
         where id = #{id,jdbcType=INTEGER}
     </select>
     <select id="selectAll" resultMap="BaseResultMap">
-        select id, price, name
+        select id, ware_id, warehouse_id
         from ticket
     </select>
 </mapper>

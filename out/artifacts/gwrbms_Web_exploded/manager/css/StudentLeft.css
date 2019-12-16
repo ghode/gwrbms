@@ -92,29 +92,3 @@ body, html {
 .nav .nav-list .personal-list li:hover {
     background: #0e8384;
 }
-
-.nav .nav-list .nav-tit .submenu
-{
-    display: none;
-    width: 140px;
-    left: 210px;
-    position: absolute;
-    top: 10px;
-    border: 1px solid #DDD;
-    z-index: 4;
-    background: white;
-    box-shadow: 0 0 8px #DDD;
-    -moz-box-shadow: 0 0 8px #DDD;
-    -webkit-box-shadow: 0 0 8px #DDD;
-}
-
-.nav .nav-list .nav-tit .submenu a
-{
-    display: block;
-    color: #737373;
-    font-size: 9pt;
-    padding: 0 8px;
-    height: 14px;
-    line-height: 14px;
-    margin: 4px 0;
-}

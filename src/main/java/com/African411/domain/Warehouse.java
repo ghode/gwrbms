@@ -12,12 +12,20 @@
 
 package com.African411.domain;
 
-public class Ticket {
+public class Warehouse {
+    private Integer warehouseId;
+
     private Integer id;
 
-    private Integer wareId;
+    private Long quantity;
 
-    private Integer warehouseId;
+    public Integer getWarehouseId() {
+        return warehouseId;
+    }
+
+    public void setWarehouseId(Integer warehouseId) {
+        this.warehouseId = warehouseId;
+    }
 
     public Integer getId() {
         return id;
@@ -27,19 +35,11 @@ public class Ticket {
         this.id = id;
     }
 
-    public Integer getWareId() {
-        return wareId;
+    public Long getQuantity() {
+        return quantity;
     }
 
-    public void setWareId(Integer wareId) {
-        this.wareId = wareId;
-    }
-
-    public Integer getWarehouseId() {
-        return warehouseId;
-    }
-
-    public void setWarehouseId(Integer warehouseId) {
-        this.warehouseId = warehouseId;
+    public void setQuantity(Long quantity) {
+        this.quantity = quantity;
     }
 }

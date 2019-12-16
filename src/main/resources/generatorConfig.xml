@@ -60,31 +60,23 @@
         <table tableName="account">
             <!-- 配置主键生成策略 -->
             <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
-
+        </table>
+        <table tableName="customer">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="record_export">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="record_import">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="retail">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
         </table>
         <table tableName="ticket">
-            <!-- 配置主键生成策略 -->
-            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
-
-        </table>
-
-        <table tableName="clerk">
-            <!-- 配置主键生成策略 -->
             <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
         </table>
-
-        <table tableName="manager">
-            <!-- 配置主键生成策略 -->
-            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
-        </table>
-
-        <table tableName="retail">
-            <!-- 配置主键生成策略 -->
-            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
-        </table>
-
-        <table tableName="shop_keeper">
-            <!-- 配置主键生成策略 -->
+        <table tableName="warehouse">
             <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
         </table>
 
