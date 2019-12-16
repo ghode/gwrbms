@@ -1,0 +1,120 @@
+/*
+ * Copyright (c) 2019. The copyright is reserved by Ghode of Harbin Institute
+ * of Technology. Users are free to copy, change or remove. Because no one
+ * will read this. Only I know is that Repeaters are the best of the world.
+ * Only I know is that Repeaters are the best of the world. Only I know is
+ * that Repeaters are the best of the world. Maybe a long copyright text
+ * seems professional. Therefore this text will be a bit lengthy. However,
+ * the author seems to be afraid that one day, this text may be uploaded to
+ * business projects. That is the time you can contact with author via email
+ * ghode@cirnocraft.im or directly ignore this, which will be interesting.
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body, html {
+    height: 100%;
+}
+
+.nav {
+    width: 210px;
+    height: 100%;
+    background: #000000;
+    color: #c1c1c1;
+}
+
+.nav .nav-list {
+    width: 100%;
+    padding-top: 30px;
+}
+
+.nav .nav-list .nav-tit {
+    width: 100%;
+    line-height: 30px;
+    margin-bottom: 40px;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.nav .nav-list .nav-tit:hover {
+    background: #0e8384;
+}
+
+.nav .nav-list .nav-tit a {
+    text-decoration: none;
+    color: #c1c1c1;
+}
+
+.nav .nav-list .nav-tit img {
+    width: 21px;
+    height: 21px;
+    vertical-align: middle;
+}
+
+.nav .nav-list .nav-tit span {
+    margin-left: 10px;
+}
+
+.nav .nav-list .personal-list {
+    width: 90px;
+    height: 80px;
+    margin-left: 30px;
+    margin-bottom: 40px;
+    font-size: 14px;
+    display: none;
+    position: relative;
+    left: 55px;
+    top: -35px;
+}
+
+.nav .nav-list .personal-list li {
+    width: 100%;
+    margin-bottom: 15px;
+    text-align: center;
+    line-height: 25px;
+    border-radius: 3px;
+}
+
+.nav .nav-list .personal-list li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.nav .nav-list .personal-list li.active {
+    background: #0e8384;
+}
+
+.nav .nav-list .personal-list li:hover {
+    background: #0e8384;
+}
+
+.nav .nav-list .nav-tit .submenu
+{
+    display: none;
+    width: 140px;
+    left: 210px;
+    position: absolute;
+    top: 10px;
+    border: 1px solid #DDD;
+    z-index: 4;
+    background: white;
+    box-shadow: 0 0 8px #DDD;
+    -moz-box-shadow: 0 0 8px #DDD;
+    -webkit-box-shadow: 0 0 8px #DDD;
+}
+
+.nav .nav-list .nav-tit .submenu a
+{
+    display: block;
+    color: #737373;
+    font-size: 9pt;
+    padding: 0 8px;
+    height: 14px;
+    line-height: 14px;
+    margin: 4px 0;
+}
