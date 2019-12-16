@@ -22,14 +22,7 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 /target/
-.idea/gwrbms.iml
-.idea/runConfigurations/Tomcat.xml
-out/artifacts/gwrbms_Web_exploded/META-INF/MANIFEST.MF
 *.iml
 /.idea/
 /.settings/
-/.idea
-.idea
-src/main/java/com/African411/controller/AccountController.java
-src/main/web/lib/
-src/test/
+/out
