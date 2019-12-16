@@ -25,6 +25,11 @@ hs_err_pid*
 .idea/gwrbms.iml
 .idea/runConfigurations/Tomcat.xml
 out/artifacts/gwrbms_Web_exploded/META-INF/MANIFEST.MF
-.idea/gwrbms.iml
-.idea/runConfigurations/Tomcat.xml
 *.iml
+/.idea/
+/.settings/
+/.idea
+.idea
+src/main/java/com/African411/controller/AccountController.java
+src/main/web/lib/
+src/test/
