@@ -12,20 +12,18 @@
 
 package com.African411.service;
 
-import com.African411.domain.Account;
+import com.African411.domain.Warehouse;
 
 import java.util.List;
 
-public interface AccountService {
-    void addAccount(Account account);
+public interface WarehouseService {
+    void addWarehouse(Warehouse warehouse);
 
-    void updateAccount(Account account);
+    void deleteWarehouse(Warehouse warehouse);
 
-    void deleteAccount(Account account);
+    void updateWarehouse(Warehouse warehouse);
 
-    Account selectAccount(Account account);
+    Warehouse selectWarehouse(Integer id, Integer wareId);
 
-    Account selectAccountById(Integer id);
-
-    List<Account> queryAll();
+    List<Warehouse> queryAll();
 }

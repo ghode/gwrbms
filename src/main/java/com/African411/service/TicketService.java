@@ -14,6 +14,8 @@ package com.African411.service;
 
 import com.African411.domain.Ticket;
 
+import java.util.List;
+
 public interface TicketService {
     void addTicket(Ticket ticket);
 
@@ -21,7 +23,7 @@ public interface TicketService {
 
     void deleteTicket(Ticket ticket);
 
-    void deleteTicketById(Integer id);
-
     Ticket selectTicket(Integer id);
+
+    List<Ticket> queryAll();
 }

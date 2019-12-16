@@ -10,22 +10,21 @@
  * ghode@cirnocraft.im or directly ignore this, which will be interesting.
  */
 
-package com.African411.service;
+package com.African411.dao;
 
-import com.African411.domain.Account;
+import com.African411.domain.Warehouse;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
-public interface AccountService {
-    void addAccount(Account account);
+public interface WarehouseMapper {
+    int deleteByPrimaryKey(@Param("id") Integer id, @Param("wareId") Integer wareId);
 
-    void updateAccount(Account account);
+    int insert(Warehouse record);
 
-    void deleteAccount(Account account);
+    Warehouse selectByPrimaryKey(@Param("id") Integer id, @Param("wareId") Integer wareId);
 
-    Account selectAccount(Account account);
+    List<Warehouse> selectAll();
 
-    Account selectAccountById(Integer id);
-
-    List<Account> queryAll();
+    int updateByPrimaryKey(Warehouse record);
 }

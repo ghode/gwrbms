@@ -17,6 +17,8 @@ import com.African411.domain.Account;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class AccountServiceImpl implements AccountService {
     @Autowired
@@ -47,5 +49,10 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public Account selectAccountById(Integer id) {
         return null;
+    }
+
+    @Override
+    public List<Account> queryAll() {
+        return accountMapper.selectAll();
     }
 }

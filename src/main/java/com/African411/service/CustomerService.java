@@ -12,17 +12,18 @@
 
 package com.African411.service;
 
+import com.African411.domain.Customer;
 
-import com.African411.domain.Retail;
-import com.African411.domain.Ticket;
+import java.util.List;
 
-public interface ClerkService {
+public interface CustomerService {
+    void addCustomer(Customer customer);
 
-    void addTicket(Ticket ticket);
+    void deleteCustomer(Customer customer);
 
-    void updateTicket(Ticket ticket);
+    void updateCustomer(Customer customer);
 
-    void deleteTicket(Ticket ticket);
+    Customer selectCustomer(Integer id);
 
-    void addRetail(Retail retail);
+    List<Customer> queryAll();
 }

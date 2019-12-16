@@ -10,7 +10,36 @@
  * ghode@cirnocraft.im or directly ignore this, which will be interesting.
  */
 
-package com.African411.service;
+package com.African411.domain;
 
-public interface ShopKeeperService {
+public class Warehouse {
+    private Integer id;
+
+    private Integer wareId;
+
+    private Long quantity;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getWareId() {
+        return wareId;
+    }
+
+    public void setWareId(Integer wareId) {
+        this.wareId = wareId;
+    }
+
+    public Long getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Long quantity) {
+        this.quantity = quantity;
+    }
 }

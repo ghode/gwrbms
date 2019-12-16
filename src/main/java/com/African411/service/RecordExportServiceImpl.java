@@ -12,40 +12,42 @@
 
 package com.African411.service;
 
-import com.African411.dao.TicketMapper;
-import com.African411.domain.Ticket;
+import com.African411.dao.RecordExportMapper;
+import com.African411.domain.RecordExport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class TicketServiceImpl implements TicketService {
+public class RecordExportServiceImpl implements RecordExportService {
     @Autowired
-    private TicketMapper ticketMapper;
+    RecordExportMapper recordExportMapper;
 
     @Override
-    public void addTicket(Ticket ticket) {
-        ticketMapper.insert(ticket);
+    public void addRecordExport(RecordExport recordExport) {
+
+        recordExportMapper.insert(recordExport);
     }
 
     @Override
-    public void updateTicket(Ticket ticket) {
-        ticketMapper.updateByPrimaryKey(ticket);
+    public void deleteRecordExport(RecordExport recordExport) {
+
+        recordExportMapper.deleteByPrimaryKey(recordExport.getId());
     }
 
     @Override
-    public void deleteTicket(Ticket ticket) {
-        ticketMapper.deleteByPrimaryKey(ticket.getId());
+    public void updateRecordExport(RecordExport recordExport) {
+        recordExportMapper.updateByPrimaryKey(recordExport);
     }
 
     @Override
-    public Ticket selectTicket(Integer id) {
-        return ticketMapper.selectByPrimaryKey(id);
+    public RecordExport selectRecordExport(Integer id) {
+        return recordExportMapper.selectByPrimaryKey(id);
     }
 
     @Override
-    public List<Ticket> queryAll() {
-        return ticketMapper.selectAll();
+    public List<RecordExport> queryAll() {
+        return recordExportMapper.selectAll();
     }
 }
