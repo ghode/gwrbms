@@ -12,10 +12,10 @@
 
 package com.African411.controller;
 
-import com.African411.domain.Retail;
 import com.African411.domain.Ticket;
-import com.African411.service.RetailService;
+import com.African411.domain.Warehouse;
 import com.African411.service.TicketService;
+import com.African411.service.WarehouseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,9 +30,8 @@ public class ClerkController {
     @Autowired
     private TicketService ticketService;
 
-
     @Autowired
-    private RetailService retailService;
+    private WarehouseService warehouseService;
 
     @PostMapping("/add_ticket")
     @ResponseBody
@@ -70,14 +69,8 @@ public class ClerkController {
 
     @PostMapping("/add_retail")
     @ResponseBody
-    public String addRetail(@RequestBody Retail retail) {
-//        TODO if (!retail.getName().equals("") && retail.getPrice() != 0 &&
-//        retail.getQuantity() != 0) {
-//            retailService.addRetail(retail);
-//            return "success";
-//        } else {
-//            return "error";
-//        }
-        return null;
+    public String addRetail(Warehouse warehouse) {
+        warehouseService.addWarehouse(warehouse);
+        return "success";
     }
 }

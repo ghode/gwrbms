@@ -12,12 +12,10 @@
 
 package com.African411.controller;
 
-import com.African411.domain.Account;
 import com.African411.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping("/account")
@@ -25,18 +23,18 @@ public class AccountController {
     @Autowired
     private AccountService accountService;
 
-    @RequestMapping("/login")
-    @ResponseBody
-    public String login(Account account) {
-        Account cur = accountService.selectAccount(account);
-        if (cur != null) {
-            if (account.getPassword().equals(cur.getPassword())) {
-                return "success";
-            } else {
-                return "error";
-            }
-        } else {
-            return "error";
-        }
-    }
+//    @RequestMapping("/login")
+//    @ResponseBody
+//    TODO public String login(String account) {
+//        Account cur = accountService.selectAccount(account);
+//        if (cur != null) {
+//            if (account.getPassword().equals(cur.getPassword())) {
+//                return "success";
+//            } else {
+//                return "error";
+//            }
+//        } else {
+//            return "error";
+//        }
+//    }
 }
