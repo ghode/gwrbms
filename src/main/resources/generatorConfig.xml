@@ -17,7 +17,7 @@
 
 <generatorConfiguration>
     <!-- 引入外部属性文件 -->
-    <properties resource="db.properties"/>
+    <properties resource="jdbc.properties"/>
 
 
     <context id="Mysql" targetRuntime="MyBatis3Simple"

@@ -15,12 +15,14 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
-    <!-- mapper scanner configurer -->
-    <bean id="mapperScannerConfig"
-          class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.African411"/>
-        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+    <!-- 1.注解扫描位置-->
+    <context:component-scan base-package="com.African411.controller"/>
+    <!-- 2.配置映射处理和适配器-->
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"/>
+    <!-- 3.视图的解析器-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/jsp/"/>
+        <property name="suffix" value=".jsp"/>
     </bean>
-
-    <context:component-scan base-package="com.African411"/>
 </beans>
