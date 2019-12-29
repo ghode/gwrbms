@@ -14,12 +14,14 @@ package com.African411.service;
 
 import com.African411.dao.CustomerMapper;
 import com.African411.domain.Customer;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class CustomerServiceImpl implements CustomerService {
+    @Autowired
     private CustomerMapper customerMapper;
 
     @Override

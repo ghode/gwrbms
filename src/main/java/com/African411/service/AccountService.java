@@ -23,6 +23,8 @@ public interface AccountService {
 
     void deleteAccount(Account account);
 
+    void deleteAccountById(Integer id);
+
     Account selectAccount(Account account);
 
     Account selectAccountById(Integer id);

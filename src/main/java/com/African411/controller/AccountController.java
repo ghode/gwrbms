@@ -12,10 +12,14 @@
 
 package com.African411.controller;
 
+import com.African411.domain.Account;
 import com.African411.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("/account")
@@ -23,18 +27,44 @@ public class AccountController {
     @Autowired
     private AccountService accountService;
 
-//    @RequestMapping("/login")
-//    @ResponseBody
-//    TODO public String login(String account) {
-//        Account cur = accountService.selectAccount(account);
-//        if (cur != null) {
-//            if (account.getPassword().equals(cur.getPassword())) {
-//                return "success";
-//            } else {
-//                return "error";
-//            }
-//        } else {
-//            return "error";
-//        }
-//    }
+    @RequestMapping("/show_all.do")
+    public ModelAndView showAll() {
+        List<Account> res = accountService.queryAll();
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("account_list", res);
+        modelAndView.setViewName("all_account");
+        return modelAndView;
+    }
+
+    @RequestMapping("/add_account.do")
+    public ModelAndView addAccount(Account account) {
+        accountService.addAccount(account);
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("add_account");
+        return modelAndView;
+    }
+
+    @RequestMapping("/delete.do")
+    public ModelAndView deleteAccount(Account account) {
+        accountService.deleteAccount(account);
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("delete_account");
+        return modelAndView;
+    }
+
+    @RequestMapping("/delete.do")
+    public ModelAndView deleteAccount(Integer id) {
+        accountService.deleteAccountById(id);
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("delete_account");
+        return modelAndView;
+    }
+
+    @RequestMapping("/update.do")
+    public ModelAndView updateAccount(Account account) {
+        accountService.updateAccount(account);
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("update_account");
+        return modelAndView;
+    }
 }

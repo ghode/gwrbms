@@ -42,13 +42,18 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
+    public void deleteAccountById(Integer id) {
+        accountMapper.deleteByPrimaryKey(id);
+    }
+
+    @Override
     public Account selectAccount(Account account) {
-        return null;
+        return accountMapper.selectByPrimaryKey(account.getId());
     }
 
     @Override
     public Account selectAccountById(Integer id) {
-        return null;
+        return accountMapper.selectByPrimaryKey(id);
     }
 
     @Override

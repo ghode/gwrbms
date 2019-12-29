@@ -61,7 +61,7 @@
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
-    <!--    &lt;!&ndash; 6.开启事务注解&ndash;&gt;-->
-    <!--    <tx:annotation-driven></tx:annotation-driven>-->
+    <!-- 6.开启事务注解 -->
+    <!--        <tx:annotation-driven></tx:annotation-driven>-->
 
 </beans>

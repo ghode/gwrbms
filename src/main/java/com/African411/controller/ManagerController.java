@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
@@ -38,11 +39,13 @@ public class ManagerController {
     @Autowired
     private CustomerService customerService;
 
-    @PostMapping("/add_ticket")
-    @ResponseBody
-    public String addTicket(@RequestBody Ticket ticket) {
+    @RequestMapping("/add_ticket.do")
+    public ModelAndView addTicket(Ticket ticket) {
         ticketService.addTicket(ticket);
-        return "success";
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("add_ticket");
+        //TODO 这个敌方需要拦截前台发来的请求，这样才能被springMVC截获.
+        return modelAndView;
     }
 
     @PostMapping("/modify_ticket")
