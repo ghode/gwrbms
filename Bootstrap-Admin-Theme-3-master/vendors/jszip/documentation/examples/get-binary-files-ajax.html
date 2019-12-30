@@ -1,0 +1,55 @@
+---
+title: "Get a file with an ajax call"
+layout: default
+section: example
+---
+
+<!--
+  ~ Copyright (c) 2019. The copyright is reserved by Ghode of Harbin Institute
+  ~ of Technology. Users are free to copy, change or remove. Because no one
+  ~ will read this. Only I know is that Repeaters are the best of the world.
+  ~ Only I know is that Repeaters are the best of the world. Only I know is
+  ~ that Repeaters are the best of the world. Maybe a long copyright text
+  ~ seems professional. Therefore this text will be a bit lengthy. However,
+  ~ the author seems to be afraid that one day, this text may be uploaded to
+  ~ business projects. That is the time you can contact with author via email
+  ~ ghode@cirnocraft.im or directly ignore this, which will be interesting.
+  -->
+
+<p>Tip : check the source of the page !</p>
+
+<h3>With JSZipUtils</h3>
+<div id="jszip_utils"></div>
+
+<script type="text/javascript">
+    (function () {
+
+        function showError(elt, err) {
+            elt.innerHTML = "<p class='alert alert-danger'>" + err + "</p>";
+        }
+
+        function showContent(elt, type, content) {
+            elt.innerHTML = "<p class='alert alert-success'>loaded ! (as a " + type + ")<br/>" +
+                "Content = " + content + "</p>";
+        }
+
+        //=========================
+        // JSZipUtils
+        //=========================
+        JSZipUtils.getBinaryContent('{{site.baseurl}}/test/ref/text.zip', function (err, data) {
+            var elt = document.getElementById('jszip_utils');
+            if (err) {
+                showError(elt, err);
+                return;
+            }
+
+            try {
+                var zip = new JSZip(data);
+                showContent(elt, "" + data, zip.file("Hello.txt").asText());
+            } catch (e) {
+                showError(elt, e);
+            }
+        });
+
+    })();
+</script>

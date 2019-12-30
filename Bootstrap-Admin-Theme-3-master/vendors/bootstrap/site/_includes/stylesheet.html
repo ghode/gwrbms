@@ -1,0 +1,36 @@
+<!--
+  ~ Copyright (c) 2019. The copyright is reserved by Ghode of Harbin Institute
+  ~ of Technology. Users are free to copy, change or remove. Because no one
+  ~ will read this. Only I know is that Repeaters are the best of the world.
+  ~ Only I know is that Repeaters are the best of the world. Only I know is
+  ~ that Repeaters are the best of the world. Maybe a long copyright text
+  ~ seems professional. Therefore this text will be a bit lengthy. However,
+  ~ the author seems to be afraid that one day, this text may be uploaded to
+  ~ business projects. That is the time you can contact with author via email
+  ~ ghode@cirnocraft.im or directly ignore this, which will be interesting.
+  -->
+
+<!-- Bootstrap core CSS -->
+{%- if jekyll.environment == "production" %}
+<link crossorigin="anonymous"
+      href="{{ site.baseurl }}/docs/{{ site.docs_version }}/dist/css/bootstrap.min.css"
+      integrity="{{ site.cdn.css_hash }}" rel="stylesheet">
+{% else %}
+<link
+  href="{{ site.baseurl }}/docs/{{ site.docs_version }}/dist/css/bootstrap.css"
+  rel="stylesheet">
+{% endif -%}
+
+{%- if page.layout == "docs" or page.layout != "examples" -%}
+<!-- Documentation extras -->
+{% if page.layout == "docs" %}
+<link
+  href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"
+  rel="stylesheet">
+{% endif %}
+{% if page.layout != "examples" %}
+<link
+  href="{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/css/docs.min.css"
+  rel="stylesheet">
+{% endif %}
+{%- endif -%}

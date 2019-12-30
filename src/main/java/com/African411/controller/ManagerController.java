@@ -77,8 +77,8 @@ public class ManagerController {
 
     @PostMapping("/add_retail")
     @ResponseBody
-    public String addRetail(Warehouse warehouse) {
-        warehouseService.addWarehouse(warehouse);
+    public String addRetail(Retail retail) {
+        retailService.addRetail(retail);
         return "success";
     }
 

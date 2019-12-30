@@ -1,0 +1,47 @@
+---
+layout: simple
+title: Versions
+description: An appendix of hosted documentation for nearly every release of Bootstrap, from v1 through v4.
+---
+
+<!--
+  ~ Copyright (c) 2019. The copyright is reserved by Ghode of Harbin Institute
+  ~ of Technology. Users are free to copy, change or remove. Because no one
+  ~ will read this. Only I know is that Repeaters are the best of the world.
+  ~ Only I know is that Repeaters are the best of the world. Only I know is
+  ~ that Repeaters are the best of the world. Maybe a long copyright text
+  ~ seems professional. Therefore this text will be a bit lengthy. However,
+  ~ the author seems to be afraid that one day, this text may be uploaded to
+  ~ business projects. That is the time you can contact with author via email
+  ~ ghode@cirnocraft.im or directly ignore this, which will be interesting.
+  -->
+
+<div class="row">
+  {% for release in site.data.docs-versions %}
+  <div class="col-md">
+    <h2>{{ release.group }}</h2>
+    <p>{{ release.description }}</p>
+    {% assign versions = release.versions | reverse %}
+    {% for version in versions %}
+    {% if forloop.first %}
+    <div class="list-group">{% endif %}
+      {% if version.v == site.docs_version %}
+      <a
+        class="list-group-item list-group-item-action py-2 text-primary d-flex justify-content-between align-items-center"
+        href="{{ release.baseurl }}/{{ version.v }}/">
+        {{ version.v }}
+        <span class="badge badge-primary">Latest</span>
+      </a>
+      {% else %}
+      <a class="list-group-item list-group-item-action py-2 text-primary"
+         href="{{ release.baseurl }}/{{ version.v }}/">
+        {{ version.v }}
+      </a>
+      {% endif %}
+      {% if forloop.last %}
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+  {% endfor %}
+</div>

@@ -1,0 +1,48 @@
+<!--
+  ~ Copyright (c) 2019. The copyright is reserved by Ghode of Harbin Institute
+  ~ of Technology. Users are free to copy, change or remove. Because no one
+  ~ will read this. Only I know is that Repeaters are the best of the world.
+  ~ Only I know is that Repeaters are the best of the world. Only I know is
+  ~ that Repeaters are the best of the world. Maybe a long copyright text
+  ~ seems professional. Therefore this text will be a bit lengthy. However,
+  ~ the author seems to be afraid that one day, this text may be uploaded to
+  ~ business projects. That is the time you can contact with author via email
+  ~ ghode@cirnocraft.im or directly ignore this, which will be interesting.
+  -->
+
+<section>
+  <h1 id="placeholders">Placeholders</h1>
+
+  <p>
+    A placeholder value can be defined and will be displayed until a
+    selection is made. Select2 uses the <code>placeholder</code> attribute
+    on multiple select boxes, which requires IE 10+. You can support it in
+    older versions with
+    <a href="https://github.com/jamesallardice/Placeholders.js">the Placeholders.js polyfill</a>.
+  </p>
+
+  <div class="s2-example">
+    <p>
+      <select class="js-example-placeholder-single js-states form-control">
+        <option></option>
+      </select>
+    </p>
+    <p>
+      <select class="js-example-placeholder-multiple js-states form-control" multiple="multiple"></select>
+    </p>
+  </div>
+
+  <pre data-fill-from=".js-code-placeholder"></pre>
+
+<script class="js-code-placeholder" type="text/javascript">
+$(".js-example-placeholder-single").select2({
+  placeholder: "Select a state",
+  allowClear: true
+});
+
+$(".js-example-placeholder-multiple").select2({
+  placeholder: "Select a state"
+});
+</script>
+
+</section>

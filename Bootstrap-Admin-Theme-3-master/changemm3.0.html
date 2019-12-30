@@ -80,10 +80,10 @@
                             <div class="content-wrap">
                                 <h6>修改密码</h6>
 
-                                <input class="form-control" type="password" placeholder="新密码">
-                                <input class="form-control" type="password" placeholder="确认新密码">
+                                <input class="form-control" type="password" placeholder="新密码" id="newkey" name="newkey">
+                                <input class="form-control" type="password" placeholder="确认新密码" id="newkey2" name="newkey2">
                                 <div class="action">
-                                    <a class="btn btn-primary signup" href="index3.0.html">提交</a>
+                                    <a class="btn btn-primary signup" id = "sub" name = "sub">提交</a>
 
                                     <a class="btn btn-primary signup" href="index3.0.html">取消</a>
                                 </div>
@@ -95,7 +95,27 @@
                 </div>
             </div>
         </div>
+<script src = "js/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+    $("#sub").click(function () {
+        var newkey = $.trim($("#newkey").val());
+        var newkey2 = $.trim($("#newkey2").val());
 
+        if(newkey == "" ){
+            alert("请输入新密码")
+        }
+        else if(newkey2 == ""){
+            alert("请确认新密码")
+        }
+        else if(newkey2 != newkey){
+            alert("前后两次输入不同");
+        }
+        else {
+            alert("密码修改成功");
+            window.location.href = "index3.0.html";
+        }
+    });
+</script>
 
 
 
