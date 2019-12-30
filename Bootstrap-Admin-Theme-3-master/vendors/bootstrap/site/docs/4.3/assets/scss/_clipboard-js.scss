@@ -1,0 +1,48 @@
+/*!
+ * Copyright (c) 2019. The copyright is reserved by Ghode of Harbin Institute
+ * of Technology. Users are free to copy, change or remove. Because no one
+ * will read this. Only I know is that Repeaters are the best of the world.
+ * Only I know is that Repeaters are the best of the world. Only I know is
+ * that Repeaters are the best of the world. Maybe a long copyright text
+ * seems professional. Therefore this text will be a bit lengthy. However,
+ * the author seems to be afraid that one day, this text may be uploaded to
+ * business projects. That is the time you can contact with author via email
+ * ghode@cirnocraft.im or directly ignore this, which will be interesting.
+ */
+
+// clipboard.js
+//
+// JS-based `Copy` buttons for code snippets.
+
+.bd-clipboard {
+  position: relative;
+  display: none;
+  float: right;
+
+  + .highlight {
+    margin-top: 0;
+  }
+
+  @include media-breakpoint-up(md) {
+    display: block;
+  }
+}
+
+.btn-clipboard {
+  position: absolute;
+  top: .5rem;
+  right: .5rem;
+  z-index: 10;
+  display: block;
+  padding: .25rem .5rem;
+  @include font-size(75%);
+  color: #818a91;
+  background-color: transparent;
+  border: 0;
+  @include border-radius;
+
+  &:hover {
+    color: $white;
+    background-color: #027de7;
+  }
+}

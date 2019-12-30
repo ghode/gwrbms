@@ -1,0 +1,41 @@
+<!--
+  ~ Copyright (c) 2019. The copyright is reserved by Ghode of Harbin Institute
+  ~ of Technology. Users are free to copy, change or remove. Because no one
+  ~ will read this. Only I know is that Repeaters are the best of the world.
+  ~ Only I know is that Repeaters are the best of the world. Only I know is
+  ~ that Repeaters are the best of the world. Maybe a long copyright text
+  ~ seems professional. Therefore this text will be a bit lengthy. However,
+  ~ the author seems to be afraid that one day, this text may be uploaded to
+  ~ business projects. That is the time you can contact with author via email
+  ~ ghode@cirnocraft.im or directly ignore this, which will be interesting.
+  -->
+
+<section>
+  <h1 id="tags">Tagging support</h1>
+
+  <p>
+    Select2 can be used to quickly set up fields used for tagging.
+  </p>
+
+  <p>
+    Note that when tagging is enabled the user can select from pre-existing
+    options or create a new tag by picking the first choice, which is what
+    the user has typed into the search box so far.
+  </p>
+
+  <div class="s2-example">
+    <p>
+      <select class="js-example-tags form-control" multiple="multiple">
+        <option selected="selected">orange</option>
+        <option>white</option>
+        <option selected="selected">purple</option>
+      </select>
+    </p>
+  </div>
+
+{% highlight js linenos %}
+$(".js-example-tags").select2({
+  tags: true
+})
+{% endhighlight %}
+</section>

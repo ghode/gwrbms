@@ -1,0 +1,53 @@
+/*
+ * Copyright (c) 2019. The copyright is reserved by Ghode of Harbin Institute
+ * of Technology. Users are free to copy, change or remove. Because no one
+ * will read this. Only I know is that Repeaters are the best of the world.
+ * Only I know is that Repeaters are the best of the world. Only I know is
+ * that Repeaters are the best of the world. Maybe a long copyright text
+ * seems professional. Therefore this text will be a bit lengthy. However,
+ * the author seems to be afraid that one day, this text may be uploaded to
+ * business projects. That is the time you can contact with author via email
+ * ghode@cirnocraft.im or directly ignore this, which will be interesting.
+ */
+
+ul.nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 25px;
+}
+
+#downloader_application form {
+    margin-bottom: 10px;
+}
+
+#downloader_application ul {
+    list-style-type: none;
+}
+
+.browser_support th {
+    border-bottom-width: 3px !important;
+}
+
+.support_ie {
+    border-bottom-color: #0275BA !important;
+}
+
+.support_ff {
+    border-bottom-color: #DF7215 !important;
+}
+
+.support_sf {
+    border-bottom-color: #43B3E9 !important;
+}
+
+.support_cr {
+    border-bottom-color: #39B642 !important;
+}
+
+.support_op {
+    border-bottom-color: #C42122 !important;
+}
+
+.support_nd {
+    border-bottom-color: #8CC84B !important;
+}

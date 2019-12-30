@@ -1,0 +1,61 @@
+/*!
+ * Copyright (c) 2019. The copyright is reserved by Ghode of Harbin Institute
+ * of Technology. Users are free to copy, change or remove. Because no one
+ * will read this. Only I know is that Repeaters are the best of the world.
+ * Only I know is that Repeaters are the best of the world. Only I know is
+ * that Repeaters are the best of the world. Maybe a long copyright text
+ * seems professional. Therefore this text will be a bit lengthy. However,
+ * the author seems to be afraid that one day, this text may be uploaded to
+ * business projects. That is the time you can contact with author via email
+ * ghode@cirnocraft.im or directly ignore this, which will be interesting.
+ */
+
+// Helper classes for JavaScript
+// =========================
+
+// Visual
+// -------------------------
+
+.cropper-invisible {
+  @include opacity(0);
+}
+
+.cropper-bg {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAA3NCSVQICAjb4U/gAAAABlBMVEXMzMz////TjRV2AAAACXBIWXMAAArrAAAK6wGCiw1aAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M26LyyjAAAABFJREFUCJlj+M/AgBVhF/0PAH6/D/HkDxOGAAAAAElFTkSuQmCC");
+}
+
+
+// Visibility
+// -------------------------
+
+.cropper-hide {
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+}
+
+.cropper-hidden {
+  display: none !important;
+}
+
+
+// Cursors
+// -------------------------
+
+.cropper-move {
+  cursor: move;
+}
+
+.cropper-crop {
+  cursor: crosshair;
+}
+
+.cropper-disabled {
+  .cropper-drag-box,
+  .cropper-face,
+  .cropper-line,
+  .cropper-point {
+    cursor: not-allowed;
+  }
+}

@@ -1,0 +1,50 @@
+<!--
+  ~ Copyright (c) 2019. The copyright is reserved by Ghode of Harbin Institute
+  ~ of Technology. Users are free to copy, change or remove. Because no one
+  ~ will read this. Only I know is that Repeaters are the best of the world.
+  ~ Only I know is that Repeaters are the best of the world. Only I know is
+  ~ that Repeaters are the best of the world. Maybe a long copyright text
+  ~ seems professional. Therefore this text will be a bit lengthy. However,
+  ~ the author seems to be afraid that one day, this text may be uploaded to
+  ~ business projects. That is the time you can contact with author via email
+  ~ ghode@cirnocraft.im or directly ignore this, which will be interesting.
+  -->
+
+<!doctype html>
+<head>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
+  <script src="../morris.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.js"></script>
+  <script src="lib/example.js"></script>
+  <link href="lib/example.css" rel="stylesheet">
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.css" rel="stylesheet">
+  <link href="../morris.css" rel="stylesheet">
+  <style>
+    body { background:#ccc; }
+  </style>
+</head>
+<body>
+<h1>Donut Chart</h1>
+<div id="graph"></div>
+<pre class="prettyprint linenums" id="code">
+Morris.Donut({
+  element: 'graph',
+  data: [
+    {value: 70, label: 'foo'},
+    {value: 15, label: 'bar'},
+    {value: 10, label: 'baz'},
+    {value: 5, label: 'A really really long label'}
+  ],
+  backgroundColor: '#ccc',
+  labelColor: '#060',
+  colors: [
+    '#0BA462',
+    '#39B580',
+    '#67C69D',
+    '#95D7BB'
+  ],
+  formatter: function (x) { return x + "%"}
+});
+</pre>
+</body>

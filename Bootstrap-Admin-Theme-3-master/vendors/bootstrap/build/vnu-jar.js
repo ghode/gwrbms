@@ -1,0 +1,70 @@
+/*
+ * Copyright (c) 2019. The copyright is reserved by Ghode of Harbin Institute
+ * of Technology. Users are free to copy, change or remove. Because no one
+ * will read this. Only I know is that Repeaters are the best of the world.
+ * Only I know is that Repeaters are the best of the world. Only I know is
+ * that Repeaters are the best of the world. Maybe a long copyright text
+ * seems professional. Therefore this text will be a bit lengthy. However,
+ * the author seems to be afraid that one day, this text may be uploaded to
+ * business projects. That is the time you can contact with author via email
+ * ghode@cirnocraft.im or directly ignore this, which will be interesting.
+ */
+
+#!/usr/bin/env node
+
+'use strict'
+
+const childProcess = require('child_process')
+const vnu = require('vnu-jar')
+
+childProcess.exec('java -version', (error, stdout, stderr) => {
+  if (error) {
+    console.error('Skipping vnu-jar test; Java is missing.')
+    return
+  }
+
+  const is32bitJava = !stderr.match(/64-Bit/)
+
+  // vnu-jar accepts multiple ignores joined with a `|`.
+  // Also note that the ignores are regular expressions.
+  const ignores = [
+    // "autocomplete" is included in <button> and checkboxes and radio <input>s due to
+    // Firefox's non-standard autocomplete behavior - see https://bugzilla.mozilla.org/show_bug.cgi?id=654072
+    'Attribute “autocomplete” is only allowed when the input type is.*',
+    'Attribute “autocomplete” not allowed on element “button” at this point.',
+    // Markup used in Components → Forms → Layout → Form grid → Horizontal form is currently invalid,
+    // but used this way due to lack of support for flexbox layout on <fieldset> element in most browsers
+    'Element “legend” not allowed as child of element “div” in this context.*',
+    // Content → Reboot uses various date/time inputs as a visual example.
+    // Documentation does not rely on them being usable.
+    'The “date” input type is not supported in all browsers.*',
+    'The “time” input type is not supported in all browsers.*',
+    // IE11 doesn't recognise <main> / give the element an implicit "main" landmark.
+    // Explicit role="main" is redundant for other modern browsers, but still valid.
+    'The “main” role is unnecessary for element “main”.',
+    // Ignore the wrong lanuage code warnings for now; they happen randomly.
+    'This document appears to be written in.*'
+  ].join('|')
+
+  const args = [
+    '-jar',
+    vnu,
+    '--asciiquotes',
+    '--skip-non-html',
+    '--Werror',
+    `--filterpattern "${ignores}"`,
+    '_gh_pages/',
+    'js/tests/'
+  ]
+
+  // For the 32-bit Java we need to pass `-Xss512k`
+  if (is32bitJava) {
+    args.splice(0, 0, '-Xss512k')
+  }
+
+  return childProcess.spawn('java', args, {
+    shell: true,
+    stdio: 'inherit'
+  })
+    .on('exit', process.exit)
+})

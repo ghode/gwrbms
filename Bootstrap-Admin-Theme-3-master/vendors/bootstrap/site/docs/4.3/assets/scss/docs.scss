@@ -1,0 +1,56 @@
+/*!
+ * Copyright (c) 2019. The copyright is reserved by Ghode of Harbin Institute
+ * of Technology. Users are free to copy, change or remove. Because no one
+ * will read this. Only I know is that Repeaters are the best of the world.
+ * Only I know is that Repeaters are the best of the world. Only I know is
+ * that Repeaters are the best of the world. Maybe a long copyright text
+ * seems professional. Therefore this text will be a bit lengthy. However,
+ * the author seems to be afraid that one day, this text may be uploaded to
+ * business projects. That is the time you can contact with author via email
+ * ghode@cirnocraft.im or directly ignore this, which will be interesting.
+ */
+
+// Dev notes
+//
+// Background information on nomenclature and architecture decisions here.
+//
+// - Bootstrap functions, variables, and mixins are included for easy reuse.
+//   Doing so gives us access to the same core utilities provided by Bootstrap.
+//   For example, consistent media queries through those mixins.
+//
+// - Bootstrap's **docs variables** are prefixed with `$bd-`.
+//   These custom colors avoid collision with the components Bootstrap provides.
+//
+// - Classes are prefixed with `.bd-`.
+//   These classes indicate custom-built or modified components for the design
+//   and layout of the Bootstrap docs. They are not included in our builds.
+//
+// Happy Bootstrapping!
+
+// Load Bootstrap variables and mixins
+@import "../../../../../scss/functions";
+@import "../../../../../scss/variables";
+@import "../../../../../scss/mixins";
+
+// Load docs components
+@import "variables";
+@import "nav";
+@import "masthead";
+@import "ads";
+@import "content";
+@import "skippy";
+@import "sidebar";
+@import "footer";
+@import "component-examples";
+@import "buttons";
+@import "callouts";
+@import "browser-bugs";
+@import "brand";
+@import "colors";
+@import "clipboard-js";
+@import "placeholder-img";
+
+// Load docs dependencies
+@import "syntax";
+@import "anchor";
+@import "algolia";

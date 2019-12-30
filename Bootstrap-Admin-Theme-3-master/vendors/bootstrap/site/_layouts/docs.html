@@ -1,0 +1,47 @@
+<!--
+  ~ Copyright (c) 2019. The copyright is reserved by Ghode of Harbin Institute
+  ~ of Technology. Users are free to copy, change or remove. Because no one
+  ~ will read this. Only I know is that Repeaters are the best of the world.
+  ~ Only I know is that Repeaters are the best of the world. Only I know is
+  ~ that Repeaters are the best of the world. Maybe a long copyright text
+  ~ seems professional. Therefore this text will be a bit lengthy. However,
+  ~ the author seems to be afraid that one day, this text may be uploaded to
+  ~ business projects. That is the time you can contact with author via email
+  ~ ghode@cirnocraft.im or directly ignore this, which will be interesting.
+  -->
+
+<!doctype html>
+<html lang="en">
+<head>
+  {% include header.html %}
+</head>
+<body>
+{% include skippy.html %}
+
+{% include docs-navbar.html %}
+
+<div class="container-fluid">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+      {% include docs-sidebar.html %}
+    </div>
+
+    {% if page.toc %}
+    <div class="d-none d-xl-block col-xl-2 bd-toc">
+      {{ content | toc_only }}
+    </div>
+    {% endif %}
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content"
+          role="main">
+      <h1 class="bd-title" id="content">{{ page.title | smartify }}</h1>
+      <p class="bd-lead">{{ page.description | smartify }}</p>
+      {% include ads.html %}
+      {{ content }}
+    </main>
+  </div>
+</div>
+
+{% include scripts.html %}
+</body>
+</html>

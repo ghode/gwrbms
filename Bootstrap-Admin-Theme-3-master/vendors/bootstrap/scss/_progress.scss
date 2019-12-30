@@ -1,0 +1,59 @@
+/*!
+ * Copyright (c) 2019. The copyright is reserved by Ghode of Harbin Institute
+ * of Technology. Users are free to copy, change or remove. Because no one
+ * will read this. Only I know is that Repeaters are the best of the world.
+ * Only I know is that Repeaters are the best of the world. Only I know is
+ * that Repeaters are the best of the world. Maybe a long copyright text
+ * seems professional. Therefore this text will be a bit lengthy. However,
+ * the author seems to be afraid that one day, this text may be uploaded to
+ * business projects. That is the time you can contact with author via email
+ * ghode@cirnocraft.im or directly ignore this, which will be interesting.
+ */
+
+// Disable animation if transitions are disabled
+@if $enable-transitions {
+  @keyframes progress-bar-stripes {
+    from {
+      background-position: $progress-height 0;
+    }
+    to {
+      background-position: 0 0;
+    }
+  }
+}
+
+.progress {
+  display: flex;
+  height: $progress-height;
+  overflow: hidden; // force rounded corners by cropping it
+  @include font-size($progress-font-size);
+  background-color: $progress-bg;
+  @include border-radius($progress-border-radius);
+  @include box-shadow($progress-box-shadow);
+}
+
+.progress-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: $progress-bar-color;
+  text-align: center;
+  white-space: nowrap;
+  background-color: $progress-bar-bg;
+  @include transition($progress-bar-transition);
+}
+
+.progress-bar-striped {
+  @include gradient-striped();
+  background-size: $progress-height $progress-height;
+}
+
+@if $enable-transitions {
+  .progress-bar-animated {
+    animation: progress-bar-stripes $progress-bar-animation-timing;
+
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+    }
+  }
+}

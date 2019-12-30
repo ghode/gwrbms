@@ -1,0 +1,71 @@
+/*
+ * Copyright (c) 2019. The copyright is reserved by Ghode of Harbin Institute
+ * of Technology. Users are free to copy, change or remove. Because no one
+ * will read this. Only I know is that Repeaters are the best of the world.
+ * Only I know is that Repeaters are the best of the world. Only I know is
+ * that Repeaters are the best of the world. Maybe a long copyright text
+ * seems professional. Therefore this text will be a bit lengthy. However,
+ * the author seems to be afraid that one day, this text may be uploaded to
+ * business projects. That is the time you can contact with author via email
+ * ghode@cirnocraft.im or directly ignore this, which will be interesting.
+ */
+
+/* iCheck plugin Futurico skin
+----------------------------------- */
+.icheckbox_futurico,
+.iradio_futurico {
+    display: inline-block;
+    *display: inline;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    width: 16px;
+    height: 17px;
+    background: url(futurico.png) no-repeat;
+    border: none;
+    cursor: pointer;
+}
+
+.icheckbox_futurico {
+    background-position: 0 0;
+}
+
+.icheckbox_futurico.checked {
+    background-position: -18px 0;
+}
+
+.icheckbox_futurico.disabled {
+    background-position: -36px 0;
+    cursor: default;
+}
+
+.icheckbox_futurico.checked.disabled {
+    background-position: -54px 0;
+}
+
+.iradio_futurico {
+    background-position: -72px 0;
+}
+
+.iradio_futurico.checked {
+    background-position: -90px 0;
+}
+
+.iradio_futurico.disabled {
+    background-position: -108px 0;
+    cursor: default;
+}
+
+.iradio_futurico.checked.disabled {
+    background-position: -126px 0;
+}
+
+/* HiDPI support */
+@media (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+    .icheckbox_futurico,
+    .iradio_futurico {
+        background-image: url(futurico@2x.png);
+        -webkit-background-size: 144px 19px;
+        background-size: 144px 19px;
+    }
+}

@@ -1,0 +1,86 @@
+/*!
+ * Copyright (c) 2019. The copyright is reserved by Ghode of Harbin Institute
+ * of Technology. Users are free to copy, change or remove. Because no one
+ * will read this. Only I know is that Repeaters are the best of the world.
+ * Only I know is that Repeaters are the best of the world. Only I know is
+ * that Repeaters are the best of the world. Maybe a long copyright text
+ * seems professional. Therefore this text will be a bit lengthy. However,
+ * the author seems to be afraid that one day, this text may be uploaded to
+ * business projects. That is the time you can contact with author via email
+ * ghode@cirnocraft.im or directly ignore this, which will be interesting.
+ */
+
+$progressbarVerticalWidth: $line-height-computed;
+$progressbarFontSize: $font-size-small;
+
+// bootstrap-progressbar global styles
+// -----------------------------------
+
+.progress {
+  position: relative;
+}
+
+.progress .progress-bar {
+  position: absolute;
+  overflow: hidden;
+  line-height: $line-height-computed;
+}
+
+.progress .progressbar-back-text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-size: $progressbarFontSize;
+  line-height: $line-height-computed;
+  text-align: center;
+}
+
+.progress .progressbar-front-text {
+  display: block;
+  width: 100%;
+  font-size: $progressbarFontSize;
+  line-height: $line-height-computed;
+  text-align: center;
+}
+
+// bootstrap-progressbar horizontal styles
+// ---------------------------------------
+
+.progress.right .progress-bar {
+  right: 0;
+}
+
+.progress.right .progressbar-front-text {
+  position: absolute;
+  right: 0;
+}
+
+// bootstrap-progressbar vertical styles
+// -------------------------------------
+
+.progress.vertical {
+  width: $progressbarVerticalWidth;
+  height: 100%;
+  float: left;
+  margin-right: $progressbarVerticalWidth;
+}
+
+.progress.vertical.bottom {
+  position: relative;
+}
+
+.progress.vertical.bottom .progressbar-front-text {
+  position: absolute;
+  bottom: 0;
+}
+
+.progress.vertical .progress-bar {
+  width: 100%;
+  height: 0;
+  @include transition(height .6s ease);
+}
+
+.progress.vertical.bottom .progress-bar {
+  position: absolute;
+  bottom: 0;
+}

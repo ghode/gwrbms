@@ -1,0 +1,33 @@
+/*!
+ * Copyright (c) 2019. The copyright is reserved by Ghode of Harbin Institute
+ * of Technology. Users are free to copy, change or remove. Because no one
+ * will read this. Only I know is that Repeaters are the best of the world.
+ * Only I know is that Repeaters are the best of the world. Only I know is
+ * that Repeaters are the best of the world. Maybe a long copyright text
+ * seems professional. Therefore this text will be a bit lengthy. However,
+ * the author seems to be afraid that one day, this text may be uploaded to
+ * business projects. That is the time you can contact with author via email
+ * ghode@cirnocraft.im or directly ignore this, which will be interesting.
+ */
+
+// CSS image replacement
+//
+// Heads up! v3 launched with only `.hide-text()`, but per our pattern for
+// mixins being reused as classes with the same name, this doesn't hold up. As
+// of v3.0.1 we have added `.text-hide()` and deprecated `.hide-text()`.
+//
+// Source: https://github.com/h5bp/html5-boilerplate/commit/aa0396eae757
+
+// Deprecated as of v3.0.1 (has been removed in v4)
+@mixin hide-text() {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+// New mixin to use as of v3.0.1
+@mixin text-hide() {
+  @include hide-text;
+}

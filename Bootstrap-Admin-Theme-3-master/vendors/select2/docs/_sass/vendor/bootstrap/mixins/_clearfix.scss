@@ -1,0 +1,34 @@
+/*!
+ * Copyright (c) 2019. The copyright is reserved by Ghode of Harbin Institute
+ * of Technology. Users are free to copy, change or remove. Because no one
+ * will read this. Only I know is that Repeaters are the best of the world.
+ * Only I know is that Repeaters are the best of the world. Only I know is
+ * that Repeaters are the best of the world. Maybe a long copyright text
+ * seems professional. Therefore this text will be a bit lengthy. However,
+ * the author seems to be afraid that one day, this text may be uploaded to
+ * business projects. That is the time you can contact with author via email
+ * ghode@cirnocraft.im or directly ignore this, which will be interesting.
+ */
+
+// Clearfix
+//
+// For modern browsers
+// 1. The space content is one way to avoid an Opera bug when the
+//    contenteditable attribute is included anywhere else in the document.
+//    Otherwise it causes space to appear at the top and bottom of elements
+//    that are clearfixed.
+// 2. The use of `table` rather than `block` is only necessary if using
+//    `:before` to contain the top-margins of child elements.
+//
+// Source: http://nicolasgallagher.com/micro-clearfix-hack/
+
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}

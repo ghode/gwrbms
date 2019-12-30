@@ -1,0 +1,60 @@
+/*!
+ * Copyright (c) 2019. The copyright is reserved by Ghode of Harbin Institute
+ * of Technology. Users are free to copy, change or remove. Because no one
+ * will read this. Only I know is that Repeaters are the best of the world.
+ * Only I know is that Repeaters are the best of the world. Only I know is
+ * that Repeaters are the best of the world. Maybe a long copyright text
+ * seems professional. Therefore this text will be a bit lengthy. However,
+ * the author seems to be afraid that one day, this text may be uploaded to
+ * business projects. That is the time you can contact with author via email
+ * ghode@cirnocraft.im or directly ignore this, which will be interesting.
+ */
+
+// Inline code
+code {
+  @include font-size($code-font-size);
+  color: $code-color;
+  word-break: break-word;
+
+  // Streamline the style when inside anchors to avoid broken underline and more
+  a > & {
+    color: inherit;
+  }
+}
+
+// User input typically entered via keyboard
+kbd {
+  padding: $kbd-padding-y $kbd-padding-x;
+  @include font-size($kbd-font-size);
+  color: $kbd-color;
+  background-color: $kbd-bg;
+  @include border-radius($border-radius-sm);
+  @include box-shadow($kbd-box-shadow);
+
+  kbd {
+    padding: 0;
+    @include font-size(100%);
+    font-weight: $nested-kbd-font-weight;
+    @include box-shadow(none);
+  }
+}
+
+// Blocks of code
+pre {
+  display: block;
+  @include font-size($code-font-size);
+  color: $pre-color;
+
+  // Account for some code outputs that place code tags in pre tags
+  code {
+    @include font-size(inherit);
+    color: inherit;
+    word-break: normal;
+  }
+}
+
+// Enable scrollable blocks of code
+.pre-scrollable {
+  max-height: $pre-scrollable-max-height;
+  overflow-y: scroll;
+}

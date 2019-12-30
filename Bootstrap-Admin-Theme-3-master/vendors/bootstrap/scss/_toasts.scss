@@ -1,0 +1,56 @@
+/*!
+ * Copyright (c) 2019. The copyright is reserved by Ghode of Harbin Institute
+ * of Technology. Users are free to copy, change or remove. Because no one
+ * will read this. Only I know is that Repeaters are the best of the world.
+ * Only I know is that Repeaters are the best of the world. Only I know is
+ * that Repeaters are the best of the world. Maybe a long copyright text
+ * seems professional. Therefore this text will be a bit lengthy. However,
+ * the author seems to be afraid that one day, this text may be uploaded to
+ * business projects. That is the time you can contact with author via email
+ * ghode@cirnocraft.im or directly ignore this, which will be interesting.
+ */
+
+.toast {
+  max-width: $toast-max-width;
+  overflow: hidden; // cheap rounded corners on nested items
+  @include font-size($toast-font-size);
+  color: $toast-color;
+  background-color: $toast-background-color;
+  background-clip: padding-box;
+  border: $toast-border-width solid $toast-border-color;
+  box-shadow: $toast-box-shadow;
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  @include border-radius($toast-border-radius);
+
+  &:not(:last-child) {
+    margin-bottom: $toast-padding-x;
+  }
+
+  &.showing {
+    opacity: 1;
+  }
+
+  &.show {
+    display: block;
+    opacity: 1;
+  }
+
+  &.hide {
+    display: none;
+  }
+}
+
+.toast-header {
+  display: flex;
+  align-items: center;
+  padding: $toast-padding-y $toast-padding-x;
+  color: $toast-header-color;
+  background-color: $toast-header-background-color;
+  background-clip: padding-box;
+  border-bottom: $toast-border-width solid $toast-header-border-color;
+}
+
+.toast-body {
+  padding: $toast-padding-x; // apply to both vertical and horizontal
+}

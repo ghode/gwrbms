@@ -1,0 +1,62 @@
+/*!
+ * Copyright (c) 2019. The copyright is reserved by Ghode of Harbin Institute
+ * of Technology. Users are free to copy, change or remove. Because no one
+ * will read this. Only I know is that Repeaters are the best of the world.
+ * Only I know is that Repeaters are the best of the world. Only I know is
+ * that Repeaters are the best of the world. Maybe a long copyright text
+ * seems professional. Therefore this text will be a bit lengthy. However,
+ * the author seems to be afraid that one day, this text may be uploaded to
+ * business projects. That is the time you can contact with author via email
+ * ghode@cirnocraft.im or directly ignore this, which will be interesting.
+ */
+
+// Google Code Prettify styles
+
+.com {
+  color: #999;
+}
+.lit {
+  color: #195f91;
+}
+.pun, .opn, .clo {
+  color: #93a1a1;
+}
+.fun {
+  color: #dc322f;
+}
+.str, .atv {
+  color: #C7254E;
+}
+.kwd, .prettyprint .tag {
+  color: #2F6F9F;
+}
+.typ, .atn, .dec, .var {
+  color: #428BCA;
+}
+.pln {
+  color: #333;
+}
+
+.prettyprint {
+  padding: 9px 14px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  border: 1px solid #eee;
+
+  &.linenums {
+    -webkit-box-shadow: inset 40px 0 0 #fbfbfb, inset 41px 0 0 #f6f6f6;
+       -moz-box-shadow: inset 40px 0 0 #fbfbfb, inset 41px 0 0 #f6f6f6;
+            box-shadow: inset 40px 0 0 #fbfbfb, inset 41px 0 0 #f6f6f6;
+  }
+}
+
+// Specify class=linenums on a pre to get line numbering
+ol.linenums {
+  margin: 0 0 0 -12px;
+
+  li {
+    padding-left: 12px;
+    color: #bebebe;
+    line-height: 18px;
+  }
+}

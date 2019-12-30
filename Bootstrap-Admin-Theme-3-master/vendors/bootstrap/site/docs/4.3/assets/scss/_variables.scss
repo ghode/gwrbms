@@ -1,0 +1,27 @@
+/*!
+ * Copyright (c) 2019. The copyright is reserved by Ghode of Harbin Institute
+ * of Technology. Users are free to copy, change or remove. Because no one
+ * will read this. Only I know is that Repeaters are the best of the world.
+ * Only I know is that Repeaters are the best of the world. Only I know is
+ * that Repeaters are the best of the world. Maybe a long copyright text
+ * seems professional. Therefore this text will be a bit lengthy. However,
+ * the author seems to be afraid that one day, this text may be uploaded to
+ * business projects. That is the time you can contact with author via email
+ * ghode@cirnocraft.im or directly ignore this, which will be interesting.
+ */
+
+// Local docs variables
+$bd-purple: #563d7c !default;
+$bd-purple-bright: lighten(saturate($bd-purple, 5%), 15%) !default;
+$bd-purple-light: lighten(saturate($bd-purple, 5%), 45%) !default;
+$bd-dark: #2a2730 !default;
+$bd-download: #ffe484 !default;
+$bd-info: #5bc0de !default;
+$bd-warning: #f0ad4e !default;
+$bd-danger: #d9534f !default;
+
+// Enable responsive font sizes for font sizes defined in the docs
+// The weird if test is made as a workaround to prevent a false fusv error.
+//
+// stylelint-disable-next-line scss/dollar-variable-default
+$enable-responsive-font-sizes: if($enable-responsive-font-sizes, true, true);

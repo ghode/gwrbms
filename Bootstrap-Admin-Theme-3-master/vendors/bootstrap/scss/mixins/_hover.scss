@@ -1,0 +1,51 @@
+/*!
+ * Copyright (c) 2019. The copyright is reserved by Ghode of Harbin Institute
+ * of Technology. Users are free to copy, change or remove. Because no one
+ * will read this. Only I know is that Repeaters are the best of the world.
+ * Only I know is that Repeaters are the best of the world. Only I know is
+ * that Repeaters are the best of the world. Maybe a long copyright text
+ * seems professional. Therefore this text will be a bit lengthy. However,
+ * the author seems to be afraid that one day, this text may be uploaded to
+ * business projects. That is the time you can contact with author via email
+ * ghode@cirnocraft.im or directly ignore this, which will be interesting.
+ */
+
+// Hover mixin and `$enable-hover-media-query` are deprecated.
+//
+// Originally added during our alphas and maintained during betas, this mixin was
+// designed to prevent `:hover` stickiness on iOS-an issue where hover styles
+// would persist after initial touch.
+//
+// For backward compatibility, we've kept these mixins and updated them to
+// always return their regular pseudo-classes instead of a shimmed media query.
+//
+// Issue: https://github.com/twbs/bootstrap/issues/25195
+
+@mixin hover {
+  &:hover {
+    @content;
+  }
+}
+
+@mixin hover-focus {
+  &:hover,
+  &:focus {
+    @content;
+  }
+}
+
+@mixin plain-hover-focus {
+  &,
+  &:hover,
+  &:focus {
+    @content;
+  }
+}
+
+@mixin hover-focus-active {
+  &:hover,
+  &:focus,
+  &:active {
+    @content;
+  }
+}

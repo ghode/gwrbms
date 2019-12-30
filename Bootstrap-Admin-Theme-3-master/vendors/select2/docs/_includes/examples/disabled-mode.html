@@ -1,0 +1,55 @@
+<!--
+  ~ Copyright (c) 2019. The copyright is reserved by Ghode of Harbin Institute
+  ~ of Technology. Users are free to copy, change or remove. Because no one
+  ~ will read this. Only I know is that Repeaters are the best of the world.
+  ~ Only I know is that Repeaters are the best of the world. Only I know is
+  ~ that Repeaters are the best of the world. Maybe a long copyright text
+  ~ seems professional. Therefore this text will be a bit lengthy. However,
+  ~ the author seems to be afraid that one day, this text may be uploaded to
+  ~ business projects. That is the time you can contact with author via email
+  ~ ghode@cirnocraft.im or directly ignore this, which will be interesting.
+  -->
+
+<section>
+
+  <h1 id="disabled">Disabled mode</h1>
+
+  <p>
+    Select2 will respond to the <code>disabled</code> attribute on
+    <code>&lt;select&gt;</code> elements. You can also initialize Select2
+    with <code>disabled: true</code> to get the same effect.
+  </p>
+
+  <div class="s2-example">
+    <p>
+      <select class="js-example-disabled js-states form-control" disabled="disabled"></select>
+    </p>
+
+    <p>
+      <select class="js-example-disabled-multi js-states form-control" disabled="disabled" multiple="multiple"></select>
+    </p>
+    <div aria-label="Programmatic enabling and disabling" class="btn-group btn-group-sm" role="group">
+      <button class="js-programmatic-enable btn btn-default" type="button">
+        Enable
+      </button>
+      <button class="js-programmatic-disable btn btn-default" type="button">
+        Disable
+      </button>
+    </div>
+  </div>
+
+  <pre data-fill-from=".js-code-disabled"></pre>
+
+<script class="js-code-disabled" type="text/javascript">
+$(".js-programmatic-enable").on("click", function () {
+  $(".js-example-disabled").prop("disabled", false);
+  $(".js-example-disabled-multi").prop("disabled", false);
+});
+
+$(".js-programmatic-disable").on("click", function () {
+  $(".js-example-disabled").prop("disabled", true);
+  $(".js-example-disabled-multi").prop("disabled", true);
+});
+</script>
+
+</section>

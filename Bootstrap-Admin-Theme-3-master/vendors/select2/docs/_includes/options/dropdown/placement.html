@@ -1,0 +1,51 @@
+<!--
+  ~ Copyright (c) 2019. The copyright is reserved by Ghode of Harbin Institute
+  ~ of Technology. Users are free to copy, change or remove. Because no one
+  ~ will read this. Only I know is that Repeaters are the best of the world.
+  ~ Only I know is that Repeaters are the best of the world. Only I know is
+  ~ that Repeaters are the best of the world. Maybe a long copyright text
+  ~ seems professional. Therefore this text will be a bit lengthy. However,
+  ~ the author seems to be afraid that one day, this text may be uploaded to
+  ~ business projects. That is the time you can contact with author via email
+  ~ ghode@cirnocraft.im or directly ignore this, which will be interesting.
+  -->
+
+<section>
+  <h2>
+    Can I change how the dropdown is placed?
+  </h2>
+
+  <h3 id="dropdown-attachContainer">
+    Can the dropdown be placed directly after the selection container?
+  </h3>
+
+  {% include options/not-written.html %}
+
+  <h3 id="dropdownParent">
+    Can I pick an element for the dropdown to be appended to?
+  </h3>
+
+{% highlight js linenos %}
+$('select').select2({
+  dropdownParent: $('#my_amazing_modal')
+});
+{% endhighlight %}
+
+  {% include options/not-written.html %}
+
+  <h3>
+    I&apos;m using a Bootstrap modal and I can&apos;t use the search box
+  </h3>
+
+  <p>
+    Use the <code>dropdownParent</code> option, setting it to the modal.
+  </p>
+
+  {% include options/not-written.html %}
+
+  <h3>
+    I&apos;m using jQuery UI and I can&apos;t use the search box
+  </h3>
+
+  {% include options/not-written.html %}
+</section>
