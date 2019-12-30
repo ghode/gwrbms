@@ -222,6 +222,19 @@
                                        type="text">
                             </div>
                         </div>
+                        <div class="item form-group">
+                            <label
+                                    class="col-form-label col-md-3 col-sm-3 label-align"
+                                    for="time">日期<span
+                                    class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 ">
+
+                                <input class="form-control" id="time"
+                                       required="required"
+                                       type="date">
+                            </div>
+                        </div>
 
                         <br>
                         <br>
@@ -278,7 +291,7 @@
         var ware_name = $.trim($("#ware-name").val());
         var warehouse_id = $.trim($("#warehouse-id").val());
         var quantity = $.trim($("#quantity").val());
-
+        var time = $.trim($("#time").val());
         if (id === "") {
             alert("请输入单号");
             return false;
@@ -290,6 +303,9 @@
             return false;
         } else if (quantity === "") {
             alert("请输入数量");
+            return false;
+        }else if (time === "") {
+            alert("请选择日期");
             return false;
         }
         alert("提交成功！");
