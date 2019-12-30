@@ -131,7 +131,7 @@
         <div class="col-md-10">
             <div class="content-box-large">
                 <div class="panel-heading">
-                    <h2>客户<small>新增客户</small></h2>
+                    <h2>货品<small>新增货品</small></h2>
                 </div>
                 <div class="panel-body">
                     <br>
@@ -141,7 +141,7 @@
                         <div class="item form-group">
                             <label
                                     class="col-form-label col-md-3 col-sm-3 label-align"
-                                    for="name">顾客姓名<span
+                                    for="name">货品名称<span
                                     class="required">*</span>
                             </label>
                             <div class="col-md-6 col-sm-6 ">
@@ -153,7 +153,7 @@
                         <div class="item form-group">
                             <label
                                     class="col-form-label col-md-3 col-sm-3 label-align"
-                                    for="id">顾客id<span
+                                    for="id">货品id<span
                                     class="required">*</span>
                             </label>
                             <div class="col-md-6 col-sm-6 ">
@@ -165,33 +165,40 @@
                         <div class="item form-group">
                             <label
                                     class="col-form-label col-md-3 col-sm-3 label-align"
-                                    for="phone">手机号<span
+                                    for="money">进货价<span
                                     class="required">*</span>
                             </label>
                             <div class="col-md-6 col-sm-6 ">
-                                <input class="form-control " id="phone"
+                                <input class="form-control " id="money"
+                                       required="required"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="item form-group">
+                            <label
+                                    class="col-form-label col-md-3 col-sm-3 label-align"
+                                    for="money1">批发价<span
+                                    class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 ">
+                                <input class="form-control " id="money1"
+                                       required="required"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="item form-group">
+                            <label
+                                    class="col-form-label col-md-3 col-sm-3 label-align"
+                                    for="money2">零售价<span
+                                    class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 ">
+                                <input class="form-control " id="money2"
                                        required="required"
                                        type="text">
                             </div>
                         </div>
 
-                        <div class="item form-group">
-                            <label
-                                    class="col-form-label col-md-3 col-sm-3 label-align"
-                                    for="type">客户类型<span
-                                    class="required">*</span>
-                            </label>
-                            <div class="col-md-6 col-sm-6 ">
-                                <select class="form-control" id="type"
-                                        name="ware-name"
-                                        required="required">
-                                    <option value="">选择</option>
-                                    <option value="1">零售</option>
-                                    <option value="2">批发</option>
-
-                                </select>
-                            </div>
-                        </div>
                         <br>
 
                         <br>
@@ -213,7 +220,7 @@
                                     重置
                                 </button>
                                 <a class="btn btn-success"
-                                   href="customer3.0.html" id="sub">
+                                   href="retail3.0.html" id="sub">
                                     提交
                                 </a>
                             </div>
@@ -247,19 +254,23 @@
     $("#sub").click(function () {
         var name = $.trim($("#name").val());
         var id = $.trim($("#id").val());
-        var phone = $.trim($("#phone").val());
-        var type = $.trim($("#type").val());
+        var money = $.trim($("#money").val());
+        var money2 = $.trim($("#money2").val());
+        var money3 = $.trim($("#money3").val());
         if (name === "") {
-            alert("请输入客户姓名");
+            alert("请输入货品名称");
             return false;
         } else if (id === "") {
-            alert("请输入客户id");
+            alert("请输入货品id");
             return false;
         } else if (phone === "") {
-            alert("请输入手机号");
+            alert("请输入进货价");
             return false;
         }else if (type === "") {
-            alert("请选择客户类型");
+            alert("请输入批发价");
+            return false;
+        }else if (type === "") {
+            alert("请输入零售价");
             return false;
         }
 
