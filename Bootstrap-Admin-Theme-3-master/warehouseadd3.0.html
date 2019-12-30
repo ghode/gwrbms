@@ -14,7 +14,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>开销售单</title>
+    <title>新增仓库</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <!-- jQuery UI -->
     <link href="https://code.jquery.com/ui/1.10.3/themes/redmond/jquery-ui.css"
@@ -131,7 +131,7 @@
         <div class="col-md-10">
             <div class="content-box-large">
                 <div class="panel-heading">
-                    <h2>开销售单</h2>
+                    <h2>仓库<small>新增仓库</small></h2>
                 </div>
                 <div class="panel-body">
                     <br>
@@ -141,100 +141,18 @@
                         <div class="item form-group">
                             <label
                                     class="col-form-label col-md-3 col-sm-3 label-align"
-                                    for="quantity">销售单id<span
+                                    for="name">仓库id<span
                                     class="required">*</span>
                             </label>
                             <div class="col-md-6 col-sm-6 ">
-                                <input class="form-control" id="id"
+                                <input class="form-control " id="name"
                                        required="required"
                                        type="text">
                             </div>
                         </div>
-                        <div class="item form-group">
-                            <label
-                                    class="col-form-label col-md-3 col-sm-3 label-align"
-                                    for="ware-name">货物名称 <span class="required">*</span>
-                            </label>
-                            <div class="col-md-6 col-sm-6 ">
-                                <select class="form-control" id="ware-name"
-                                        name="ware-name"
-                                        required="required">
-                                    <option value="">选择</option>
-                                    <option>001 饺子</option>
-                                    <option>002 咸鱼</option>
-                                    <option>003 奥里给</option>
-                                    <option>004 记事本</option>
-                                    <option>005 饮用水</option>
-                                    <option>006 订书机</option>
-                                    <option>007 钢笔</option>
-                                    <option>008 手机壳</option>
-                                    <option>009 水瓶</option>
-                                    <option>010 速溶咖啡</option>
-                                    <option>011 水果刀</option>
-                                    <option>012 鼠标垫</option>
-                                    <option>013 围巾</option>
-                                    <option>014 勺子</option>
-                                    <option>015 铅笔</option>
-                                </select>
-                            </div>
-                        </div>
-                        <br>
 
-                        <div class="item form-group">
-                            <label
-                                    class="col-form-label col-md-3 col-sm-3 label-align"
-                                    for="warehouse-id">出货仓库 <span
-                                    class="required">*</span>
-                            </label>
-                            <div class="col-md-6 col-sm-6 ">
-                                <select class="form-control" id="warehouse-id"
-                                        name="ware-name"
-                                        required="required">
-                                    <option value="">选择</option>
-                                    <option value="001">001</option>
-                                    <option value="002">002</option>
-                                    <option value="003">003</option>
-                                    <option value="004">004</option>
-                                    <option value="005">005</option>
-                                    <option value="006">006</option>
-                                    <option value="007">007</option>
-                                    <option value="008">008</option>
-                                    <option value="009">009</option>
-                                    <option value="010">010</option>
-                                    <option value="011">011</option>
-                                    <option value="012">012</option>
-                                    <option value="013">013</option>
-                                    <option value="014">014</option>
-                                    <option value="015">015</option>
-                                </select>
-                            </div>
-                        </div>
-                        <br>
-                        <div class="item form-group">
-                            <label
-                                    class="col-form-label col-md-3 col-sm-3 label-align"
-                                    for="quantity">数量<span
-                                    class="required">*</span>
-                            </label>
-                            <div class="col-md-6 col-sm-6 ">
-                                <input class="form-control" id="quantity"
-                                       required="required"
-                                       type="text">
-                            </div>
-                        </div>
-                        <div class="item form-group">
-                            <label
-                                    class="col-form-label col-md-3 col-sm-3 label-align"
-                                    for="time">日期<span
-                                    class="required">*</span>
-                            </label>
-                            <div class="col-md-6 col-sm-6 ">
 
-                                <input class="form-control" id="time"
-                                       required="required"
-                                       type="date">
-                            </div>
-                        </div>
+                        <br>
 
                         <br>
                         <br>
@@ -247,7 +165,7 @@
                         <br>
                         <div class="item form-group">
                             <div class="col-md-6 col-sm-6 offset-md-3">
-                                <a class="btn btn-primary" href="index3.0.html"
+                                <a class="btn btn-primary" href="warehouse3.0.html"
                                    type="button">
                                     取消
                                 </a>
@@ -255,7 +173,7 @@
                                     重置
                                 </button>
                                 <a class="btn btn-success"
-                                   href="index3.0.html" id="sub">
+                                   href="warehouse3.0.html" id="sub">
                                     提交
                                 </a>
                             </div>
@@ -287,27 +205,13 @@
 <script src="js/tables.js"></script>
 <script type="text/javascript">
     $("#sub").click(function () {
-        var id = $.trim($("#id").val());
-        var ware_name = $.trim($("#ware-name").val());
-        var warehouse_id = $.trim($("#warehouse-id").val());
-        var quantity = $.trim($("#quantity").val());
-        var time = $.trim($("#time").val());
-        if (id === "") {
-            alert("请输入单号");
-            return false;
-        } else if (ware_name === "") {
-            alert("请选择货物");
-            return false;
-        } else if (warehouse_id === "") {
-            alert("请选择仓库编号");
-            return false;
-        } else if (quantity === "") {
-            alert("请输入数量");
-            return false;
-        }else if (time === "") {
-            alert("请选择日期");
+        var name = $.trim($("#name").val());
+
+        if (name === "") {
+            alert("请输入仓库id");
             return false;
         }
+
         alert("提交成功！");
 
     });
