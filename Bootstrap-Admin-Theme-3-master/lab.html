@@ -132,31 +132,8 @@
                 </div>
                 <center>
                     <br/><br/>
-                    <a href="javascript:showAddInput();">添加客户</a>
-                    <div id="addinfo" style="display:none">
-                        <form>
-                            <br>
-                            顾客姓名：<br><input id="username" type="text"/><br>
-                            <!--限制用户名只能用英文 下划线 或数字-->
-                            顾客ID：<br><input id="password" type="number"/><br>
-
-                            手机号:<br><input id="phone" type="number"/><br>
-
-                            客户类型：<br><input id="uid" type="number"/><br>
-
-
-
-                            <!--            选项D:<br><input id="qq" type="text"/><br>-->
-                            <!--            正确答案:<br><input id="uid" type="text"/><br><br>-->
-                            <input id="btn_add" onclick="addInfo()" type="button" value="提交">
-                            <input id="btn_update" onclick="updateInfo()" style="display:none"
-                                   type="button" value="提交">
-                            <input onclick="hideAddInput()" type="button" value="取消">
-                        </form>
-                    </div>
-
-
-
+                    <a href="customeradd3.0.html">添加客户</a>
+                </center>
                 <div class="panel-body">
                     <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
                         <thead>
@@ -316,7 +293,7 @@
                         </tbody>
                     </table>
                 </div>
-                </center>
+
             </div>
         </div>
     </div>
@@ -333,184 +310,7 @@
 
         </div>
     </footer>
-<script type="text/javascript">
-    var row = 0; //定义全局行数用于修改
-    quary();
 
-    //----获取行号-----
-    function getRow(r) {
-        var i = r.parentNode.parentNode.rowIndex;
-        return i;
-    }
-
-    //----获取行号-----
-
-    //----删除某一行-----
-    function delRow(r) {
-        document.getElementById('table').deleteRow(getRow(r));
-    }
-
-    //----删除某一行-----
-
-    //----清除添加信息框的内容-----
-    function cleanAddInput() {
-        document.getElementById('username').value = '';
-        document.getElementById('password').value = '';
-        // document.getElementById('name').value = '';
-        //document.getElementById('email').value = '';
-        document.getElementById('phone').value = '';
-        // document.getElementById('qq').value = '';
-        document.getElementById('uid').value = '';
-    }
-
-    //----清除添加信息框的内容-----
-
-    //----显示添加信息框-----
-    function showAddInput() {
-        document.getElementById('addinfo').style = "display:block-inline";
-        document.getElementById('btn_add').style = "display:block-inline";
-        document.getElementById('btn_update').style = "display:none";
-        cleanAddInput();
-    }
-
-    //----显示添加信息框-----
-
-    //----隐藏添加信息框-----
-    function hideAddInput() {
-        document.getElementById('addinfo').style = "display:none";
-
-    }
-
-    //----隐藏添加信息框-----
-
-    //----判断输入框的信息是否符合要求-----
-    function judge() {
-        //根据id获取表单信息
-        var username = document.getElementById('username').value;
-        var password = document.getElementById('password').value;
-        // var name = document.getElementById('name').value;
-        //var email = document.getElementById('email').value;
-        var phone = document.getElementById('phone').value;
-        // var qq = document.getElementById('qq').value;
-        var uid = document.getElementById('uid').value;
-        var judge = true; //用于判断表单信息是否符合
-
-
-        return judge;
-    }
-
-    // //----判断输入框的信息是否符合要求-----
-    // var urll = "/quiz/Stu/findstudent";
-    //
-    // function quary() {
-    //
-    //     var queryurl = "/quiz/Que/queryAll";
-    //     $.ajax({
-    //         url: queryurl,
-    //         type: "GET",
-    //         dataType: "json",
-    //         success: function (str) {
-    //
-    //             $(str).each(function (index, e) {
-    //                 var arr = new Array();
-    //
-    //                 arr[0] = e.questionId;
-    //                 arr[1] = e.tigan;
-    //                 arr[2] = e.selectionA;
-    //                 arr[3] = e.selectionB;
-    //                 // arr[4] = e.selectionC;
-    //                 // arr[5] = e.selectionD;
-    //                 // arr[6] = e.answer;
-    //                 arr[4] = "<a style='text-align:center;color:#ba21ff;cursor:pointer;' onclick='updateRow(this);'>修改</a> <a style='text-align:center;color:#ba21ff;cursor:pointer;' onclick='delRow(this);'>删除</a>";
-    //                 var x = document.getElementById('table').insertRow(1); //获取第一行对象
-    //
-    //                 for (var i = 0; i < arr.length; i++) {
-    //                     x.insertCell(i).innerHTML = arr[i]; //用循环把每个数据插入第一行的每一列
-    //                 }
-    //             });
-    //
-    //         },
-    //         // error: function () {
-    //         //     alert("fail");
-    //         // }
-    //
-    //     });
-    //
-    // }
-
-    //----新增信息的插入方法-----
-    function insertInfo() {
-        //根据id获取表单信息
-        var arr = new Array();
-
-        arr[0] = document.getElementById('username').value;
-        arr[1] = document.getElementById('password').value;
-        // arr[2] = document.getElementById('name').value;
-        //arr[3] = document.getElementById('email').value;
-        arr[2] = document.getElementById('phone').value;
-        // arr[5] = document.getElementById('qq').value;
-        arr[3] = document.getElementById('uid').value;
-        arr[4] = "<a style='text-align:center;color:#a61be0;cursor:pointer;' onclick='updateRow(this);'>修改</a> <a style='text-align:center;color:#a61be0;cursor:pointer;' onclick='delRow(this);'>删除</a>";
-        var x = document.getElementById('table').insertRow(1); //获取第一行对象
-
-        for (var i = 0; i < arr.length; i++) {
-            x.insertCell(i).innerHTML = arr[i]; //用循环把每个数据插入第一行的每一列
-        }
-
-    }
-
-    //----新增信息的插入方法-----
-
-    //----新增信息-----
-    function addInfo() {
-
-
-            alert('添加成功');
-            insertInfo(); //执行插入
-            hideAddInput(); //隐藏添加信息框
-
-        //  else {
-        //     alert('添加失败');
-        // }
-    }
-
-    //----新增信息-----
-
-
-    //----根据行号修改信息-----
-    function updateRow(r) {
-        row = getRow(r); //把该行号赋值给全局变量
-        showAddInput(); //显示修改表单
-        //提交按钮替换
-        document.getElementById('btn_add').style = "display:none";
-        document.getElementById('btn_update').style = "display:block-inline";
-        insertInputFromQuery(queryInfoByRow(row));
-
-    }
-
-
-
-    function updateInfo() {
-        if (judge() == true) {
-            alert('修改成功');
-            document.getElementById('table').deleteRow(row);//删除原来那行
-            insertInfo(); //插入修改后的值
-            hideAddInput(); //隐藏添加模块
-        } else {
-            alert('修改失败');
-            hideAddInput();
-        }
-    }
-
-
-    function aaa() {
-        alert("111");
-    }
-    $("#sub").click(function () {
-        window.location.href='sale.html';
-        alert("零售单提交成功");
-    });
-</script>
     <link href="vendors/datatables/dataTables.bootstrap.css" rel="stylesheet" media="screen">
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

@@ -131,7 +131,7 @@
         <div class="col-md-10">
             <div class="content-box-large">
                 <div class="panel-heading">
-                    <h2>货物入库<small>添加货物入库表</small></h2>
+                    <h2>客户<small>新增客户</small></h2>
                 </div>
                 <div class="panel-body">
                     <br>
@@ -141,75 +141,59 @@
                         <div class="item form-group">
                             <label
                                     class="col-form-label col-md-3 col-sm-3 label-align"
-                                    for="ware-name">货物名称 <span class="required">*</span>
+                                    for="quantity">顾客姓名<span
+                                    class="required">*</span>
                             </label>
                             <div class="col-md-6 col-sm-6 ">
-                                <select class="form-control" id="ware-name"
+                                <input class="form-control " id="name"
+                                       required="required"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="item form-group">
+                            <label
+                                    class="col-form-label col-md-3 col-sm-3 label-align"
+                                    for="quantity">顾客id<span
+                                    class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 ">
+                                <input class="form-control " id="id"
+                                       required="required"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="item form-group">
+                            <label
+                                    class="col-form-label col-md-3 col-sm-3 label-align"
+                                    for="quantity">手机号<span
+                                    class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 ">
+                                <input class="form-control " id="phone"
+                                       required="required"
+                                       type="text">
+                            </div>
+                        </div>
+
+                        <div class="item form-group">
+                            <label
+                                    class="col-form-label col-md-3 col-sm-3 label-align"
+                                    for="type">客户类型<span
+                                    class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 ">
+                                <select class="form-control" id="type"
                                         name="ware-name"
                                         required="required">
                                     <option value="">选择</option>
-                                    <option>001 饺子</option>
-                                    <option>002 咸鱼</option>
-                                    <option>003 奥里给</option>
-                                    <option>004 记事本</option>
-                                    <option>005 饮用水</option>
-                                    <option>006 订书机</option>
-                                    <option>007 钢笔</option>
-                                    <option>008 手机壳</option>
-                                    <option>009 水瓶</option>
-                                    <option>010 速溶咖啡</option>
-                                    <option>011 水果刀</option>
-                                    <option>012 鼠标垫</option>
-                                    <option>013 围巾</option>
-                                    <option>014 勺子</option>
-                                    <option>015 铅笔</option>
+                                    <option value="1">零售</option>
+                                    <option value="2">批发</option>
+
                                 </select>
                             </div>
                         </div>
                         <br>
 
-                        <div class="item form-group">
-                            <label
-                                    class="col-form-label col-md-3 col-sm-3 label-align"
-                                    for="warehouse-id">仓库序号 <span
-                                    class="required">*</span>
-                            </label>
-                            <div class="col-md-6 col-sm-6 ">
-                                <select class="form-control" id="warehouse-id"
-                                        name="ware-name"
-                                        required="required">
-                                    <option value="">选择</option>
-                                    <option value="001">001</option>
-                                    <option value="002">002</option>
-                                    <option value="003">003</option>
-                                    <option value="004">004</option>
-                                    <option value="005">005</option>
-                                    <option value="006">006</option>
-                                    <option value="007">007</option>
-                                    <option value="008">008</option>
-                                    <option value="009">009</option>
-                                    <option value="010">010</option>
-                                    <option value="011">011</option>
-                                    <option value="012">012</option>
-                                    <option value="013">013</option>
-                                    <option value="014">014</option>
-                                    <option value="015">015</option>
-                                </select>
-                            </div>
-                        </div>
-                        <br>
-                        <div class="item form-group">
-                            <label
-                                    class="col-form-label col-md-3 col-sm-3 label-align"
-                                    for="quantity">数量<span
-                                    class="required">*</span>
-                            </label>
-                            <div class="col-md-6 col-sm-6 ">
-                                <input class="form-control " id="quantity"
-                                       required="required"
-                                       type="text">
-                            </div>
-                        </div>
                         <br>
                         <br>
                         <br>
@@ -229,7 +213,7 @@
                                     重置
                                 </button>
                                 <a class="btn btn-success"
-                                   href="index3.0.html" id="sub">
+                                   href="customer3.0.html" id="sub">
                                     提交
                                 </a>
                             </div>
@@ -261,19 +245,24 @@
 <script src="js/tables.js"></script>
 <script type="text/javascript">
     $("#sub").click(function () {
-        var ware_name = $.trim($("#ware-name").val());
-        var warehouse_id = $.trim($("#warehouse-id").val());
-        var quantity = $.trim($("#quantity").val());
-        if (ware_name === "") {
-            alert("请选择货物");
+        var name = $.trim($("#name").val());
+        var id = $.trim($("#id").val());
+        var phone = $.trim($("#phone").val());
+        var type = $.trim($("#type").val());
+        if (name === "") {
+            alert("请输入客户姓名");
             return false;
-        } else if (warehouse_id === "") {
-            alert("请选择仓库编号");
+        } else if (id === "") {
+            alert("请输入客户id");
             return false;
-        } else if (quantity === "") {
-            alert("请输入数量");
+        } else if (phone === "") {
+            alert("请输入手机号");
+            return false;
+        }else if (type === "") {
+            alert("请选择客户类型");
             return false;
         }
+
         alert("提交成功！");
 
     });
