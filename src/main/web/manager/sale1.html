@@ -228,35 +228,6 @@
 
     }
 
-    //----根据行号修改信息-----
-
-
-    //----根据行号查信息----
-    function queryInfoByRow(r) {
-
-        var arr = new Array();
-        for (var m = 0; m < 4; m++) {
-            arr[m] = document.getElementById('table').rows[row].cells[m].innerText;
-        }
-        return arr; //返回该行数据
-
-    }
-
-    //----根据行号查信息----
-
-    //----把查询到的信息放入修改的表单里----
-    function insertInputFromQuery(arr) {
-        document.getElementById('username').value = arr[0];
-        document.getElementById('password').value = arr[1];
-        document.getElementById('name').value = arr[2];
-        //document.getElementById('email').value = arr[3];
-        // document.getElementById('phone').value = arr[4];
-        // document.getElementById('qq').value = arr[5];
-        // document.getElementById('uid').value = arr[6];
-
-    }
-
-    //----把查询到的信息放入修改的表单里----
 
 
     function updateInfo() {
