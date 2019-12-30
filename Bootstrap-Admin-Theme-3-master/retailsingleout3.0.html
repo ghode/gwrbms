@@ -1,3 +1,15 @@
+<!--
+  ~ Copyright (c) 2019. The copyright is reserved by Ghode of Harbin Institute
+  ~ of Technology. Users are free to copy, change or remove. Because no one
+  ~ will read this. Only I know is that Repeaters are the best of the world.
+  ~ Only I know is that Repeaters are the best of the world. Only I know is
+  ~ that Repeaters are the best of the world. Maybe a long copyright text
+  ~ seems professional. Therefore this text will be a bit lengthy. However,
+  ~ the author seems to be afraid that one day, this text may be uploaded to
+  ~ business projects. That is the time you can contact with author via email
+  ~ ghode@cirnocraft.im or directly ignore this, which will be interesting.
+  -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,24 +42,15 @@
                     <h1><a href="index3.0.html">通用批发零售业务管理系统</a></h1>
                 </div>
             </div>
-            <div class="col-md-5">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <!--                        <div class="input-group form">-->
-                        <!--                            <input type="text" class="form-control" placeholder="Search...">-->
-                        <!--                            <span class="input-group-btn">-->
-                        <!--	                         <button class="btn btn-primary" type="button">Search</button>-->
-                        <!--	                       </span>-->
-                        <!--                        </div>-->
-                    </div>
-                </div>
-            </div>
             <div class="col-md-2">
                 <div class="navbar navbar-inverse" role="banner">
-                    <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
+                    <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right"
+                         role="navigation">
                         <ul class="nav navbar-nav">
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">我的账户<b class="caret"></b></a>
+                                <a href="#" class="dropdown-toggle"
+                                   data-toggle="dropdown">我的账户<b
+                                        class="caret"></b></a>
                                 <ul class="dropdown-menu animated fadeInUp">
                                     <li><a href="changemm3.0.html">修改密码</a></li>
                                     <li><a href="login3.0.html">退出</a></li>
@@ -69,7 +72,8 @@
             <div class="sidebar content-box" style="display: block;">
                 <ul class="nav">
                     <!-- Main menu -->
-                    <li class="current"><a href="index3.0.html"><i class="glyphicon glyphicon-home"></i>首页</a></li>
+                    <li class="current"><a href="index3.0.html"><i
+                            class="glyphicon glyphicon-home"></i>首页</a></li>
 
 
                     <li class="submenu">
@@ -86,7 +90,9 @@
                     </li>
 
 
-                    <li><a href="profit3.0.html"><i class="glyphicon glyphicon-calendar"></i>经营状况</a></li>
+                    <li><a href="profit3.0.html"><i
+                            class="glyphicon glyphicon-calendar"></i>经营状况</a>
+                    </li>
 
 
                     <li class="submenu">
@@ -126,155 +132,105 @@
             <div class="row">
                 <div class="col-md-12 panel-warning">
                     <div class="content-box-large box-with-header">
-
-                        <div id="wizard" class="form_wizard wizard_horizontal">
-                            <ul class="wizard_steps">
-                                <li>
-                                    <a href="#step-1">
-                                        <span class="step_no">1</span>
-                                        <span class="step_descr">
-                                              选择商品<br />
-                                          </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#step-2">
-                                        <span class="step_no">2</span>
-                                        <span class="step_descr">
-                                              选择仓库<br />
-                                          </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#step-3">
-                                        <span class="step_no">3</span>
-                                        <span class="step_descr">
-                                              输入售卖数量<br />
-                                          </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#step-4">
-                                        <span class="step_no">4</span>
-                                        <span class="step_descr">
-                                              确认订单<br />
-                                          </span>
-                                    </a>
-                                </li>
-                            </ul>
-                            <div id="step-1">
-                                <h2 class="StepTitle">第一步：请选择进行零售的商品</h2>
-                                <form class="form-horizontal form-label-left">
-
-                                    <div class="form-group row">
-                                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">商品编号<span class="required">*</span>
-                                        </label>
-                                        <div class="col-md-6 col-sm-6 ">
-                                            <select class="form-control" id="sel" name="type">
-                                                <option>001 饺子</option>
-                                                <option>002 咸鱼</option>
-                                                <option>003 奥里给</option>
-                                                <option>004 记事本</option>
-                                                <option>005 饮用水</option>
-                                                <option>006 订书机</option>
-                                                <option>007 钢笔</option>
-                                                <option>008 手机壳</option>
-                                                <option>009 水瓶</option>
-                                                <option>010 速溶咖啡</option>
-                                                <option>011 水果刀</option>
-                                                <option>012 鼠标垫</option>
-                                                <option>013 围巾</option>
-                                                <option>014 勺子</option>
-                                                <option>015 铅笔</option>
-                                            </select>
-
-                                        </div>
-                                    </div>
-
-
-                                </form>
-
+                        <form class="form-horizontal form-label-left"
+                              data-parsley-validate=""
+                              id="demo-form2" novalidate="">
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-3 col-sm-3 label-align"
+                                       for="ware_id">商品编号
+                                    <span class="required">*</span>
+                                </label>
+                                <div class="col-md-6 col-sm-6 ">
+                                    <select class="form-control"
+                                            id="ware_id" name="type">
+                                        <option></option>
+                                        <option>001 饺子</option>
+                                        <option>002 咸鱼</option>
+                                        <option>003 奥里给</option>
+                                        <option>004 记事本</option>
+                                        <option>005 饮用水</option>
+                                        <option>006 订书机</option>
+                                        <option>007 钢笔</option>
+                                        <option>008 手机壳</option>
+                                        <option>009 水瓶</option>
+                                        <option>010 速溶咖啡</option>
+                                        <option>011 水果刀</option>
+                                        <option>012 鼠标垫</option>
+                                        <option>013 围巾</option>
+                                        <option>014 勺子</option>
+                                        <option>015 铅笔</option>
+                                    </select>
+                                </div>
                             </div>
-                            <div id="step-2">
-                                <h2 class="StepTitle">第二步：请选择出货仓库</h2>
-                                <form class="form-horizontal form-label-left">
-
-                                    <div class="form-group row">
-                                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">仓库编号<span class="required">*</span>
-                                        </label>
-                                        <div class="col-md-6 col-sm-6 ">
-                                            <select class="form-control" id="sel" name="type">
-                                                <option>001</option>
-                                                <option>002</option>
-                                                <option>003</option>
-                                                <option>004</option>
-                                                <option>005</option>
-                                                <option>006</option>
-                                                <option>007</option>
-                                                <option>008</option>
-                                                <option>009</option>
-                                                <option>010</option>
-                                                <option>011</option>
-                                                <option>012</option>
-                                                <option>013</option>
-                                                <option>014</option>
-                                                <option>015</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-
-                                </form>
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-3 col-sm-3 label-align"
+                                       for="warehouse_id">仓库编号
+                                    <span class="required">*</span>
+                                </label>
+                                <div class="col-md-6 col-sm-6 ">
+                                    <select class="form-control"
+                                            id="warehouse_id" name="type">
+                                        <option></option>
+                                        <option>001</option>
+                                        <option>002</option>
+                                        <option>003</option>
+                                        <option>004</option>
+                                        <option>005</option>
+                                        <option>006</option>
+                                        <option>007</option>
+                                        <option>008</option>
+                                        <option>009</option>
+                                        <option>010</option>
+                                        <option>011</option>
+                                        <option>012</option>
+                                        <option>013</option>
+                                        <option>014</option>
+                                        <option>015</option>
+                                    </select>
+                                </div>
                             </div>
-                            <div id="step-3">
-                                <h2 class="StepTitle">第三步：请输入售卖数量</h2>
-                                <form class="form-horizontal form-label-left">
-
-                                    <div class="form-group row">
-                                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">售卖数量<span class="required">*</span>
-                                        </label>
-                                        <div class="col-md-6 col-sm-6 ">
-                                            <input type="text" id="first-name" required="required" class="form-control  ">
-                                        </div>
-                                    </div>
-
-
-                                </form>
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-3 col-sm-3 label-align"
+                                       for="quantity">售卖数量<span
+                                        class="required">*</span>
+                                </label>
+                                <div class="col-md-6 col-sm-6 ">
+                                    <input type="text" id="quantity"
+                                           required="required"
+                                           class="form-control">
+                                </div>
                             </div>
-                            <div id="step-4">
-                                <h2 class="StepTitle">第四步：请确认订单</h2>
-                                <h4>请对零售业务进行再三检查，注意相近商品名称，售卖数量的位数，确认没有错填误填后再点击提交按钮
-                                <br>
-                                    <br>
-                                    <br>
-                                    <button class="btn" type="button" id="sub" name="sub">提交</button>
-                                <br>
-                                </h4>
-
+                            <div class="item form-group">
+                                <div class="col-md-6 col-sm-6 offset-md-3">
+                                    <a class="btn btn-primary"
+                                       href="index3.0.html"
+                                       type="button">
+                                        取消
+                                    </a>
+                                    <button class="btn btn-primary"
+                                            type="reset">
+                                        重置
+                                    </button>
+                                    <a class="btn btn-success"
+                                       href="#" id="sub">
+                                        提交
+                                    </a>
+                                </div>
                             </div>
-
-                        </div>
-                        <!-- End SmartWizard Content -->
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-
-
     </div>
 </div>
-
-
 <footer>
     <div class="container">
-
         <div class="copy text-center">
-            Copyright 2019 <a href='#'>Website</a>
+            Copyright 2019 <a href='#' class="btn-app btn btn-xs">Website</a>
         </div>
-
     </div>
 </footer>
-
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://code.jquery.com/jquery.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -293,8 +249,11 @@
 <script src="js/custom.min.js"></script>
 <script type="text/javascript">
     $("#sub").click(function () {
-        alert("已提交您的零售订单")
-        window.location.href = "index3.0.html";
+        alert("已提交您的零售订单");
+        $("#demo-form2").find('input[type=text],select,input[type=hidden]').each(
+            function () {
+            $(this).val('');
+        });
     });
 </script>
 </body>
