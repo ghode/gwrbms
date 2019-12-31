@@ -104,7 +104,7 @@
                         <ul>
                             <li><a href="retailin3.0.html">货物入库</a></li>
                             <li><a href="retailchange3.0.html">货物调拨</a></li>
-                            <li><a href="retailsearch.html">库存查询</a></li>
+                            <li><a href="retailsearch.0.html">库存查询</a></li>
                         </ul>
                     </li>
 
@@ -252,9 +252,8 @@
         alert("已提交您的零售订单");
         $("#demo-form2").find('input[type=text],select,input[type=hidden]').each(
             function () {
-            $(this).val('');
-        });
-        window.location.href = "retailsingleout3.0.0.html";
+                $(this).val('');
+            });
     });
 </script>
 </body>

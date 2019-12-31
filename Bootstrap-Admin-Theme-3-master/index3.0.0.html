@@ -14,12 +14,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>仓库信息</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <!-- jQuery UI -->
-    <link href="https://code.jquery.com/ui/1.10.3/themes/redmond/jquery-ui.css"
-          media="screen" rel="stylesheet">
-
+    <title>通用批发零售业务管理系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- styles -->
@@ -42,22 +38,14 @@
                     <h1><a href="index3.0.html">通用批发零售业务管理系统</a></h1>
                 </div>
             </div>
-            <div class="col-md-5">
-                <div class="row">
-                    <div class="col-lg-12">
-
-                    </div>
-                </div>
-            </div>
             <div class="col-md-2">
                 <div class="navbar navbar-inverse" role="banner">
                     <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right"
                          role="navigation">
                         <ul class="nav navbar-nav">
                             <li class="dropdown">
-                                <a class="dropdown-toggle"
-                                   data-toggle="dropdown"
-                                   href="#">我的账户<b
+                                <a href="#" class="dropdown-toggle"
+                                   data-toggle="dropdown">我的账户<b
                                         class="caret"></b></a>
                                 <ul class="dropdown-menu animated fadeInUp">
                                     <li><a href="changemm3.0.html">修改密码</a></li>
@@ -71,16 +59,16 @@
         </div>
     </div>
 </div>
-
-
 <div class="page-content">
     <div class="row">
         <div class="col-md-2">
             <div class="sidebar content-box" style="display: block;">
                 <ul class="nav">
                     <!-- Main menu -->
-                    <li><a href="index3.0.html"><i
+                    <li class="current"><a href="index3.0.html"><i
                             class="glyphicon glyphicon-home"></i>首页</a></li>
+
+
                     <li class="submenu">
                         <a href="#">
                             <i class="glyphicon glyphicon-list"></i> 货物销售
@@ -93,12 +81,13 @@
                             <li><a href="retailsingleout3.0.html">零售</a></li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="profit3.0.html">
-                            <i class="glyphicon glyphicon-calendar"></i>
-                            经营状况
-                        </a>
+
+
+                    <li><a href="profit3.0.html"><i
+                            class="glyphicon glyphicon-calendar"></i>经营状况</a>
                     </li>
+
+
                     <li class="submenu">
                         <a href="#">
                             <i class="glyphicon glyphicon-list"></i> 仓库管理
@@ -108,12 +97,12 @@
                         <ul>
                             <li><a href="retailin3.0.html">货物入库</a></li>
                             <li><a href="retailchange3.0.html">货物调拨</a></li>
-                            <li><a href="retailsearch.html">库存查询</a></li>
+                            <li><a href="retailsearch.0.html">库存查询</a></li>
                         </ul>
                     </li>
 
 
-                    <li class="submenu" class="current">
+                    <li class="submenu">
                         <a href="#">
                             <i class="glyphicon glyphicon-list"></i> 基础资料
                             <span class="caret pull-right"></span>
@@ -125,95 +114,79 @@
                             <li><a href="customer3.0.html">客户资料</a></li>
                         </ul>
                     </li>
+
+
                 </ul>
             </div>
         </div>
         <div class="col-md-10">
-            <div class="content-box-large">
-                <div class="panel-heading">
-                    <h2>仓库信息<small>修改仓库信息</small></h2>
-                </div>
-                <div class="panel-body">
-                    <br>
-                    <form class="form-horizontal form-label-left"
-                          data-parsley-validate=""
-                          id="demo-form2" novalidate="">
-
-                        <div class="item form-group">
-                            <label
-                                    class="col-form-label col-md-3 col-sm-3 label-align"
-                                    for="id">仓库id<span
-                                    class="required">*</span>
-                            </label>
-                            <div class="col-md-6 col-sm-6 ">
-                                <input class="form-control" id="id"
-                                       required="required"
-                                       type="text"value="011">
-                            </div>
+            <div class="row">
+                <div class="col-md-12 panel-warning">
+                    <div class="content-box-header panel-heading">
+                        <div class="panel-title ">欢迎您使用 African411
+                            通用批发零售业务管理系统
                         </div>
 
-                        <br>
-
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <div class="item form-group">
-                            <div class="col-md-6 col-sm-6 offset-md-3">
-                                <a class="btn btn-primary" href="warehouse3.0.html"
-                                   type="button">
-                                    取消
-                                </a>
-                                <button class="btn btn-primary" type="reset">
-                                    重置
-                                </button>
-                                <a class="btn btn-success"
-                                   href="warehouse3.0html" id="sub">
-                                    提交
-                                </a>
-                            </div>
+                        <div class="panel-options">
+                            <a href="#" data-rel="collapse"><i
+                                    class="glyphicon glyphicon-refresh"></i></a>
+                            <a href="#" data-rel="reload"><i
+                                    class="glyphicon glyphicon-cog"></i></a>
                         </div>
-                    </form>
+                    </div>
+                    <div class="content-box-large box-with-header">
+                        Copyright (c) 2019.
+                        <br/><br/>
+                        The copyright is reserved by Ghode of Harbin Institute
+                        of Technology.
+                        <br/><br/>
+                        Users are free to copy, change or remove. Because no one
+                        will read this.
+                        <br/><br/>
+                        Only I know is that Repeaters are the best of the world.
+                        Only I know is that Repeaters are the best of the world.
+                        Only I know is that Repeaters are the best of the world.
+                        <br/><br/>
+                        Maybe a long copyright text seems professional.
+                        Therefore this text will be a bit lengthy.
+                        However, the author seems to be afraid that one day,
+                        this text may be uploaded to
+                        business projects.
+                        <br/><br/>
+                        That is the time you can contact with author via email
+                        ghode@cirnocraft.im or directly ignore this, which will
+                        be interesting.
+                        <br/><br/>
+                        <br/><br/>
+                        <br/><br/>
+                        <br/><br/>
+                        <br/><br/>
+                        <br/><br/>
+                        <br/><br/>
+                        <br/><br/>
+                        <br/><br/>
+                        <br/><br/>
+                    </div>
                 </div>
             </div>
         </div>
+
+
     </div>
 </div>
 <footer>
     <div class="container">
+
         <div class="copy text-center">
             Copyright 2019 <a href='#'>Website</a>
         </div>
+
     </div>
 </footer>
-<link href="vendors/datatables/dataTables.bootstrap.css" media="screen"
-      rel="stylesheet">
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://code.jquery.com/jquery.js"></script>
-<!-- jQuery UI -->
-<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="bootstrap/js/bootstrap.min.js"></script>
-<script src="vendors/datatables/js/jquery.dataTables.min.js"></script>
-<script src="vendors/datatables/dataTables.bootstrap.js"></script>
 <script src="js/custom.js"></script>
-<script src="js/tables.js"></script>
-<script type="text/javascript">
-    $("#sub").click(function () {
-
-        var id = $.trim($("#id").val());
-        if (id === "") {
-            alert("请输入顾客id");
-            return false;
-        }
-        alert("提交成功！");
-
-    });
-</script>
 </body>
 </html>
