@@ -44,7 +44,7 @@ public class ManagerController {
         ticketService.addTicket(ticket);
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("add_ticket");
-        //TODO 这个敌方需要拦截前台发来的请求，这样才能被springMVC截获.
+        //TODO 这个地方需要拦截前台发来的请求，这样才能被springMVC截获.
         return modelAndView;
     }
 

@@ -11,12 +11,15 @@
   -->
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Login</title>
-    <meta charset="utf-8">
-    <link href="css/style.css" rel='stylesheet' type='text/css'/>
-    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="UTF-8">
+    <title>Customer</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
+          rel="stylesheet">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="application/x-javascript"> addEventListener("load", function () {
         setTimeout(hideURLbar, 0);
     }, false);
@@ -25,54 +28,85 @@
         window.scrollTo(0, 1);
     } </script>
 </head>
-<style>
-
-</style>
-
-<body>
-
-<!-----start-main---->
-
-<div class="main">
-    <div class="login-form">
-        <h1>通用批发零售业务管理系统 </h1>
-        <h1>用户登录</h1>
-
-
-        <form action="/account/login/log" method="GET">
-
-            <input class="text" id="username" name="username"
-                   onblur="if (this.value == '') {this.value = '用户名';}"
-                   onfocus="this.value = '';" type="text"
-                   value="用户名">
-            <input id="password" name="password"
-                   onblur="if (this.value == '') {this.value = '000000';}"
-                   onfocus="this.value = '';"
-                   type="password"
-                   value="000000">
-            <div class="submit">
-                用户类型&nbsp;&nbsp;&nbsp;
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a href="#">首页</a>
+                </li>
+                <li>
+                    <a href="#">简介</a>
+                </li>
+                <li class="disabled">
+                    <a href="#">信息</a>
+                </li>
+                <li class="dropdown pull-right">
+                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">下拉<strong class="caret"></strong></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#">操作</a>
+                        </li>
+                        <li>
+                            <a href="#">设置栏目</a>
+                        </li>
+                        <li>
+                            <a href="#">更多设置</a>
+                        </li>
+                        <li class="divider">
+                        </li>
+                        <li>
+                            <a href="#">分割线</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row clearfix">
+        <div class="col-md-6 column">
+            <h3>
+                通用批发零售业务管理系统
+            </h3>
+            <p class="text-info">
+                该系统希望能够做到尽可能的易于使用，方便操作，且可靠，为商户管理商品及顾客信息提供极大的便利。
+            </p>
+        </div>
+        <div class="col-md-6 column">
+            <form class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label for="username" class="col-sm-2 control-label">用户名</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="username"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="col-sm-2 control-label">密码</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" id="password"/>
+                    </div>
+                </div>
                 <select class="form-control" id="sel" name="type">
-                    <option value = 1>店员</option>
-                    <option value = 2>店长</option>
-                    <option value = 3>经理</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
                 </select>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-default" id="BLogin">登录</button>
+                    </div>
+                </div>
 
-                <br>
-                .
-                <input type="submit" value="登录" id="sub" name="sub">
-
-            </div>
-            <!-- <p><a href="#">Forgot Password ?</a></p> -->
-        </form>
+            </form>
+        </div>
     </div>
 </div>
-<!-----//end-main---->
+</body>
 
-
-<script src = "js/jquery-3.2.1.js"></script>
+<script src="js/jquery-3.2.1.js"></script>
 <script type="text/javascript">
-    $("#sub").click(function () {
+    $("#BLogin").click(function () {
+        window.location.href = "clerk/ClerkIndex.html";
         var username = $.trim($("#username").val());
         var password = $.trim($("#password").val());
         var type = $.trim($("#sel").val());
@@ -87,7 +121,7 @@
         $.ajax(
             {
                 type: 'POST',
-                url: 'account/add_retail/',
+                url: 'account/login/',
                 data: data,
                 dataType: 'json',
                 success:function(msg){
@@ -102,15 +136,13 @@
                         else {
                             window.location.href = "manager/ManagerIndex.html";
                         }
-                    }else{
-                        alert("登录失败，请重试!");
-                    }
+        }else{
+            alert("登录失败，请重试!");
+        }
                 }
             }
         );
 
     });
 </script>
-</body>
-
 </html>
